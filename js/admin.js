@@ -53,7 +53,7 @@ function buildForms() {
   const d = workingData;
 
   // repo + token (remembered in this browser)
-  document.getElementById("gh-repo").value = localStorage.getItem("gsf-repo") || "";
+  document.getElementById("gh-repo").value = localStorage.getItem("gsf-repo") || "Nitram353/great-step-forest";
   document.getElementById("gh-token").value = localStorage.getItem("gsf-token") || "";
 
   // data-through-week selector
