@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Journey — The Great Step Forest</title>
+  <meta name="description" content="How far have our teams walked from London?" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🌳</span>
+        <span>
+          <span class="brand-name">The Great Step Forest</span><br />
+          <span class="brand-sub">Stepping up for Trees for Cities</span>
+        </span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Leaderboards</a>
+        <a href="journey.html" class="active">The Journey</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero journey-hero">
+    <div class="wrap">
+      <div class="week-pill"><span class="dot"></span><span id="week-pill-text">Week — of —</span></div>
+      <h1>The long walk out of London</h1>
+      <p class="lede">
+        Add up every step each team has taken and set off from our office — down to Dover,
+        across to France, over the Alps, through Rome and on towards Istanbul.
+        The team that travels the furthest in six weeks wins it all for
+        <a href="https://www.treesforcities.org" target="_blank" rel="noopener">Trees for Cities</a>.
+      </p>
+    </div>
+  </section>
+
+  <main class="wrap" style="padding-bottom:64px">
+    <div class="stat-strip journey-cards" id="journey-cards"></div>
+
+    <div id="map"></div>
+
+    <section class="section" style="margin-top:40px">
+      <div class="section-head">
+        <h2>🚩 Milestones along the route</h2>
+        <span class="hint">Flags show which teams have passed through</span>
+      </div>
+      <div class="milestones" id="milestones"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>The Great Step Forest · A London office charity challenge in aid of <a href="https://www.treesforcities.org" target="_blank" rel="noopener">Trees for Cities</a></span>
+      <a class="admin-link" href="admin.html">Admin</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/app.js"></script>
+  <script src="js/journey.js"></script>
+  <script>
+    loadData().then(renderJourney).catch(showLoadError);
+  </script>
+</body>
+</html>

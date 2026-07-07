@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — The Great Step Forest</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🌳</span>
+        <span>
+          <span class="brand-name">The Great Step Forest</span><br />
+          <span class="brand-sub">Admin console</span>
+        </span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Leaderboards</a>
+        <a href="journey.html">The Journey</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="admin-wrap">
+
+    <!-- Passcode gate -->
+    <div class="admin-card" id="gate-card">
+      <h2>🔐 Admin access</h2>
+      <p class="sub">Enter the admin passcode to manage competition data.</p>
+      <div class="field">
+        <label for="gate-pass">Passcode</label>
+        <input type="password" id="gate-pass" autocomplete="off" />
+      </div>
+      <button class="btn-publish" id="gate-btn">Unlock</button>
+      <div class="status-msg" id="gate-status"></div>
+    </div>
+
+    <!-- Admin console (hidden until unlocked) -->
+    <div id="console" style="display:none">
+
+      <div class="admin-card">
+        <h2>⚙️ Publishing setup</h2>
+        <p class="sub">
+          Changes are published by committing directly to the site's GitHub repository.
+          Paste a GitHub personal access token with write access to the repo — it is stored
+          only in this browser (localStorage), never on the site.
+        </p>
+        <div class="grid-2">
+          <div class="field">
+            <label for="gh-repo">Repository (owner/name)</label>
+            <input type="text" id="gh-repo" placeholder="your-username/trees-step-challenge" />
+          </div>
+          <div class="field">
+            <label for="gh-token">GitHub token</label>
+            <input type="password" id="gh-token" placeholder="github_pat_… or ghp_…" autocomplete="off" />
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <h2>👟 Weekly steps</h2>
+        <p class="sub">Enter total steps recorded by each team, per week. Leave future weeks at 0.</p>
+        <div class="field" style="max-width:220px">
+          <label for="data-through-week">Results entered through week</label>
+          <select id="data-through-week"></select>
+        </div>
+        <div id="steps-blocks"></div>
+      </div>
+
+      <div class="admin-card">
+        <h2>💚 Money raised</h2>
+        <p class="sub">Running fundraising total per team, in pounds.</p>
+        <div class="grid-2" id="funds-fields"></div>
+      </div>
+
+      <div class="admin-card">
+        <h2>⭐ Top individual steppers</h2>
+        <p class="sub">The top 5 shown on the leaderboard (cumulative steps). First name + initial is plenty.</p>
+        <div id="individual-rows"></div>
+        <button class="btn-add" id="add-individual">+ Add person</button>
+      </div>
+
+      <div class="admin-card">
+        <h2>📌 Events</h2>
+        <p class="sub">Events shown in the sidebar. Mark one as “featured” to pin it to the top in the big blue card.</p>
+        <div id="event-rows"></div>
+        <button class="btn-add" id="add-event">+ Add event</button>
+      </div>
+
+      <div class="admin-card">
+        <h2>🚀 Publish</h2>
+        <p class="sub">Commits your changes to GitHub. The live site updates within a minute or two.</p>
+        <button class="btn-publish" id="publish-btn">Publish changes</button>
+        <button class="btn-ghost" id="download-btn" style="margin-left:10px">Download data.json instead</button>
+        <div class="status-msg" id="publish-status"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>The Great Step Forest · Admin</span>
+      <a class="admin-link" href="index.html">← Back to site</a>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

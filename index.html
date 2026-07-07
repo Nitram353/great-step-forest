@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Great Step Forest — London Office Step Challenge</title>
+  <meta name="description" content="Four teams. Six weeks. Millions of steps for Trees for Cities." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🌳</span>
+        <span>
+          <span class="brand-name">The Great Step Forest</span><br />
+          <span class="brand-sub">Stepping up for Trees for Cities</span>
+        </span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="active">Leaderboards</a>
+        <a href="journey.html">The Journey</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="week-pill"><span class="dot"></span><span id="week-pill-text">Week — of —</span></div>
+      <h1>Four teams. Six weeks. Millions of steps for the city's trees.</h1>
+      <p class="lede">
+        Every step our teams take raises money for
+        <a href="https://www.treesforcities.org" target="_blank" rel="noopener">Trees for Cities</a> —
+        the charity planting urban trees and greening cities across the UK and beyond.
+        The team that travels the furthest wins. The trees win either way.
+      </p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="stat-strip" id="stat-strip">
+      <div class="stat-card"><div class="stat-value" id="stat-steps">—</div><div class="stat-label">Total steps so far</div></div>
+      <div class="stat-card"><div class="stat-value" id="stat-km">—</div><div class="stat-label">Kilometres travelled</div></div>
+      <div class="stat-card"><div class="stat-value" id="stat-money">—</div><div class="stat-label">Raised for Trees for Cities</div></div>
+      <div class="stat-card"><div class="stat-value" id="stat-walkers">—</div><div class="stat-label">Colleagues walking</div></div>
+    </div>
+
+    <div class="page-grid">
+      <div class="main-col">
+
+        <section class="section" id="team-leaderboard-section">
+          <div class="section-head">
+            <h2>🏆 Team leaderboard</h2>
+            <span class="hint" id="team-board-hint">Cumulative steps</span>
+          </div>
+          <div class="board" id="team-board"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h2>📅 Week by week</h2>
+            <span class="hint">Steps recorded each week</span>
+          </div>
+          <div class="board week-table-scroll">
+            <table class="week-table" id="week-table"></table>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h2>⭐ Top steppers</h2>
+            <span class="hint">Top 5 individuals, all teams</span>
+          </div>
+          <div class="board" id="individual-board"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h2>💚 Fundraising leaderboard</h2>
+            <span class="hint">Running totals per team</span>
+          </div>
+          <div class="fund-total">
+            <div>
+              <div class="label">Raised so far, all teams</div>
+              <div class="amount" id="fund-grand-total">—</div>
+            </div>
+            <div class="trees" id="fund-trees-note"></div>
+          </div>
+          <div class="board" id="fund-board"></div>
+        </section>
+
+      </div>
+
+      <aside class="sidebar">
+        <div id="featured-event"></div>
+
+        <div class="side-card">
+          <h3>📌 Upcoming events</h3>
+          <div id="event-list"></div>
+        </div>
+
+        <div class="side-card charity-card">
+          <h3>🌱 Why we're walking</h3>
+          <p>
+            <strong>Trees for Cities</strong> is the only UK charity working at a national and international
+            scale to improve lives by planting trees in cities — creating greener, healthier
+            neighbourhoods where they're needed most. Every pound our teams raise helps plant
+            and care for urban trees.
+          </p>
+          <a class="btn-charity" href="https://www.treesforcities.org" target="_blank" rel="noopener">Visit treesforcities.org →</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>The Great Step Forest · A London office charity challenge in aid of <a href="https://www.treesforcities.org" target="_blank" rel="noopener">Trees for Cities</a></span>
+      <a class="admin-link" href="admin.html">Admin</a>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    loadData().then(renderDashboard).catch(showLoadError);
+  </script>
+</body>
+</html>

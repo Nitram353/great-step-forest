@@ -1,0 +1,89 @@
+{
+  "settings": {
+    "competitionName": "The Great Step Forest",
+    "tagline": "London office step challenge for Trees for Cities",
+    "charityName": "Trees for Cities",
+    "charityUrl": "https://www.treesforcities.org",
+    "startDate": "2026-06-15",
+    "totalWeeks": 6,
+    "dataThroughWeek": 3,
+    "stepLengthMeters": 0.75
+  },
+  "teams": [
+    { "id": "oaks", "name": "The Mighty Oaks", "color": "#2d53ed", "emoji": "🌳", "members": 24 },
+    { "id": "willows", "name": "The Wandering Willows", "color": "#a167ff", "emoji": "🌿", "members": 19 },
+    { "id": "maples", "name": "The Marching Maples", "color": "#ed5a8f", "emoji": "🍁", "members": 28 },
+    { "id": "birches", "name": "The Blazing Birches", "color": "#117c96", "emoji": "🌲", "members": 17 }
+  ],
+  "weeklySteps": {
+    "oaks":    [1182340, 1240118, 1105472, 0, 0, 0],
+    "willows": [1020551, 1168724, 1092308, 0, 0, 0],
+    "maples":  [1310204, 1201559, 1254867, 0, 0, 0],
+    "birches": [892410, 1004882, 968344, 0, 0, 0]
+  },
+  "funds": {
+    "oaks": 1080,
+    "willows": 965,
+    "maples": 1245,
+    "birches": 890
+  },
+  "topIndividuals": [
+    { "name": "Priya S.", "team": "maples", "steps": 289410 },
+    { "name": "Tom W.", "team": "oaks", "steps": 274982 },
+    { "name": "Aisha K.", "team": "willows", "steps": 268540 },
+    { "name": "Dan M.", "team": "maples", "steps": 261077 },
+    { "name": "Sophie L.", "team": "birches", "steps": 249315 }
+  ],
+  "events": [
+    {
+      "title": "Battersea Park parkrun",
+      "date": "2026-07-11",
+      "time": "9:00am",
+      "location": "Battersea Park, London",
+      "description": "Join the office takeover of the Battersea Park parkrun! A free, timed 5K around the park — walk, jog or run. Every colleague who takes part donates £2 to Trees for Cities, and every step counts towards your team total.",
+      "link": "https://forms.gle/REPLACE-WITH-SIGNUP-FORM",
+      "linkLabel": "Sign up & pledge your £2",
+      "featured": true
+    },
+    {
+      "title": "Lunchtime Thames Loop",
+      "date": "2026-07-15",
+      "time": "12:30pm",
+      "location": "Meet in the lobby",
+      "description": "A brisk 45-minute guided walk along the Thames Path. All teams welcome — bring your step counter!",
+      "link": "",
+      "linkLabel": "",
+      "featured": false
+    },
+    {
+      "title": "Quiz Night for Trees",
+      "date": "2026-07-16",
+      "time": "6:00pm",
+      "location": "4th floor kitchen",
+      "description": "Tree-themed pub quiz. £5 entry per person, all proceeds to Trees for Cities. Winning table earns 50,000 bonus steps for their team.",
+      "link": "",
+      "linkLabel": "",
+      "featured": false
+    },
+    {
+      "title": "Bake Sale & Step Swap",
+      "date": "2026-07-21",
+      "time": "10:00am – 2:00pm",
+      "location": "Reception",
+      "description": "Buy a treat, fund a tree. Cakes priced in 'steps' — pay what you like, everything goes to the charity pot.",
+      "link": "",
+      "linkLabel": "",
+      "featured": false
+    },
+    {
+      "title": "Grand Finale & Awards Evening",
+      "date": "2026-07-30",
+      "time": "5:30pm",
+      "location": "The Boardroom",
+      "description": "The winning team is crowned! Final leaderboards revealed, prizes for top steppers, and the grand fundraising total presented to Trees for Cities.",
+      "link": "",
+      "linkLabel": "",
+      "featured": false
+    }
+  ]
+}
