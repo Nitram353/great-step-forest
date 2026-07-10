@@ -43,10 +43,26 @@
     }
   ],
   "weeklySteps": {
-    "owls": [50000, 0, 0],
-    "bumblebees": [25000, 0, 0],
-    "collies": [22000, 0, 0],
-    "dolphins": [0, 0, 0]
+    "owls": [
+      50000,
+      0,
+      0
+    ],
+    "bumblebees": [
+      25000,
+      0,
+      0
+    ],
+    "collies": [
+      22000,
+      0,
+      0
+    ],
+    "dolphins": [
+      0,
+      0,
+      0
+    ]
   },
   "funds": {
     "owls": 0,
@@ -68,7 +84,7 @@
       "time": "6pm",
       "location": "starting at RRA office",
       "description": "Join the office fun run around St James Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!",
-      "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
+      "link": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?gid=0#gid=0",
       "linkLabel": "Sign up & pledge your £5",
       "icon": "🏃",
       "featured": true
@@ -79,7 +95,7 @@
       "time": "6pm",
       "location": "RRA office",
       "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. The cheapest night out in Mayfair at a cost of £5!",
-      "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
+      "link": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?gid=0#gid=0",
       "linkLabel": "Sign up & pledge your £5",
       "icon": "🎯",
       "featured": true
