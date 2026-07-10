@@ -44,17 +44,17 @@
   ],
   "weeklySteps": {
     "owls": [
-      50000,
+      0,
       0,
       0
     ],
     "bumblebees": [
-      25000,
+      0,
       0,
       0
     ],
     "collies": [
-      22000,
+      0,
       0,
       0
     ],
@@ -83,7 +83,7 @@
       "date": "2026-08-05",
       "time": "6pm",
       "location": "starting at RRA office",
-      "description": "Join the office fun run around St James Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!",
+      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!",
       "link": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?gid=0#gid=0",
       "linkLabel": "Sign up & pledge your £5",
       "icon": "🏃",
@@ -94,22 +94,11 @@
       "date": "2026-08-06",
       "time": "6pm",
       "location": "RRA office",
-      "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. The cheapest night out in Mayfair at a cost of £5!",
+      "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. Take a look at the Sign up sheet and get ready for a great evening!",
       "link": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?gid=0#gid=0",
       "linkLabel": "Sign up & pledge your £5",
       "icon": "🎯",
       "featured": true
-    },
-    {
-      "title": "Grand Finale & Awards Evening",
-      "date": "2026-08-13",
-      "time": "5:30pm",
-      "location": "The Boardroom",
-      "description": "The winning team is crowned! Final leaderboards revealed, prizes for top steppers, and the grand fundraising total presented to Trees for Cities.",
-      "link": "",
-      "linkLabel": "",
-      "icon": "",
-      "featured": false
     }
   ]
 }
