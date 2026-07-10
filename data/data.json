@@ -1,13 +1,16 @@
 {
   "settings": {
-    "competitionName": "The Great Step Forest",
-    "tagline": "London office step challenge for Trees for Cities",
+    "competitionName": "RRA Intern Fund Raising Challenge",
+    "tagline": "Stepping up for Trees for Cities",
     "charityName": "Trees for Cities",
     "charityUrl": "https://www.treesforcities.org",
-    "startDate": "2026-06-15",
+    "startDate": "2026-07-15",
     "totalWeeks": 6,
-    "dataThroughWeek": 3,
-    "stepLengthMeters": 0.75
+    "dataThroughWeek": 0,
+    "stepLengthMeters": 0.75,
+    "signupUrl": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
+    "signupPledge": "£10",
+    "goFundMeUrl": ""
   },
   "teams": [
     { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 24 },
@@ -16,68 +19,44 @@
     { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 17 }
   ],
   "weeklySteps": {
-    "owls":       [1182340, 1240118, 1105472, 0, 0, 0],
-    "bumblebees": [1020551, 1168724, 1092308, 0, 0, 0],
-    "collies":    [1310204, 1201559, 1254867, 0, 0, 0],
-    "dolphins":   [892410, 1004882, 968344, 0, 0, 0]
+    "owls":       [0, 0, 0, 0, 0, 0],
+    "bumblebees": [0, 0, 0, 0, 0, 0],
+    "collies":    [0, 0, 0, 0, 0, 0],
+    "dolphins":   [0, 0, 0, 0, 0, 0]
   },
   "funds": {
-    "owls": 1080,
-    "bumblebees": 965,
-    "collies": 1245,
-    "dolphins": 890
+    "owls": 0,
+    "bumblebees": 0,
+    "collies": 0,
+    "dolphins": 0
   },
-  "topIndividuals": [
-    { "name": "Priya S.", "team": "collies", "steps": 289410 },
-    { "name": "Tom W.", "team": "owls", "steps": 274982 },
-    { "name": "Aisha K.", "team": "bumblebees", "steps": 268540 },
-    { "name": "Dan M.", "team": "collies", "steps": 261077 },
-    { "name": "Sophie L.", "team": "dolphins", "steps": 249315 }
-  ],
+  "topIndividuals": [],
   "events": [
     {
-      "title": "Battersea Park parkrun",
-      "date": "2026-07-11",
-      "time": "9:00am",
-      "location": "Battersea Park, London",
-      "description": "Join the office takeover of the Battersea Park parkrun! A free, timed 5K around the park — walk, jog or run. Every colleague who takes part donates £2 to Trees for Cities, and every step counts towards your team total.",
+      "title": "5k fun run",
+      "date": "2026-08-05",
+      "time": "6pm",
+      "location": "starting at RRA office",
+      "description": "Join the office fun run around St James Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!",
       "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
-      "linkLabel": "Sign up & pledge your £2",
-      "featured": true
+      "linkLabel": "Sign up & pledge your £5",
+      "featured": true,
+      "icon": "🏃"
     },
     {
-      "title": "Lunchtime Thames Loop",
-      "date": "2026-07-15",
-      "time": "12:30pm",
-      "location": "Meet in the lobby",
-      "description": "A brisk 45-minute guided walk along the Thames Path. All teams welcome — bring your step counter!",
-      "link": "",
-      "linkLabel": "",
-      "featured": false
-    },
-    {
-      "title": "Quiz Night for Trees",
-      "date": "2026-07-16",
-      "time": "6:00pm",
-      "location": "4th floor kitchen",
-      "description": "Tree-themed pub quiz. £5 entry per person, all proceeds to Trees for Cities. Winning table earns 50,000 bonus steps for their team.",
-      "link": "",
-      "linkLabel": "",
-      "featured": false
-    },
-    {
-      "title": "Bake Sale & Step Swap",
-      "date": "2026-07-21",
-      "time": "10:00am – 2:00pm",
-      "location": "Reception",
-      "description": "Buy a treat, fund a tree. Cakes priced in 'steps' — pay what you like, everything goes to the charity pot.",
-      "link": "",
-      "linkLabel": "",
-      "featured": false
+      "title": "Darts and raffle night",
+      "date": "2026-08-06",
+      "time": "6pm",
+      "location": "RRA office",
+      "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. The cheapest night out in Mayfair at a cost of £5!",
+      "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
+      "linkLabel": "Sign up & pledge your £5",
+      "featured": true,
+      "icon": "🎯"
     },
     {
       "title": "Grand Finale & Awards Evening",
-      "date": "2026-07-30",
+      "date": "2026-08-27",
       "time": "5:30pm",
       "location": "The Boardroom",
       "description": "The winning team is crowned! Final leaderboards revealed, prizes for top steppers, and the grand fundraising total presented to Trees for Cities.",

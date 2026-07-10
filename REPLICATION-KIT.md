@@ -1,4 +1,4 @@
-# 🌳 The Great Step Forest — Replication Kit
+# 🌳 RRA Intern Fun~~d~~ Raising Challenge — Replication Kit
 
 This file lets you rebuild the charity step-challenge website
 (https://nitram353.github.io/great-step-forest/) from scratch on your own
@@ -71,13 +71,19 @@ GitHub username and token when you need them, and never commit the token.**
 
 ### 3.1 What the site is
 
-A website for a London office charity competition called **The Great Step
-Forest**. Four teams compete for 6 weeks to raise money for the charity
-**Trees for Cities** (link to https://www.treesforcities.org so visitors
-understand the purpose). Teams track their weekly step counts; steps convert
-to distance (0.75 m per step); the team that "travels" the furthest from
-London over 6 weeks wins. The public site is read-only; one admin updates the
-numbers through a hidden admin page.
+A website for a London office charity competition called the **RRA Intern
+Fund Raising Challenge** — everywhere the name is displayed, the letter "d"
+in "Fund" gets a cyan strikethrough (a `<span class="fun-d">d</span>` with
+`text-decoration: line-through`), the joke being that it's Fun raising as
+much as Fund raising. Four teams compete for 6 weeks to raise money for the
+charity **Trees for Cities** (link to https://www.treesforcities.org so
+visitors understand the purpose). Participants join by signing up on a
+shared Google Sheet and pledging £10. Teams track their weekly step counts;
+steps convert to distance (0.75 m per step); the team that "travels" the
+furthest from London over 6 weeks wins. Donations are collected on a
+GoFundMe page (URL configurable; buttons show "coming soon" until it's set).
+The public site is read-only; one admin updates the numbers through a hidden
+admin page.
 
 ### 3.2 Files
 
@@ -124,14 +130,17 @@ README.md       — how the site works + admin instructions
 ```json
 {
   "settings": {
-    "competitionName": "The Great Step Forest",
-    "tagline": "London office step challenge for Trees for Cities",
+    "competitionName": "RRA Intern Fund Raising Challenge",
+    "tagline": "Stepping up for Trees for Cities",
     "charityName": "Trees for Cities",
     "charityUrl": "https://www.treesforcities.org",
-    "startDate": "2026-06-15",
+    "startDate": "2026-07-15",
     "totalWeeks": 6,
-    "dataThroughWeek": 3,
-    "stepLengthMeters": 0.75
+    "dataThroughWeek": 0,
+    "stepLengthMeters": 0.75,
+    "signupUrl": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
+    "signupPledge": "£10",
+    "goFundMeUrl": ""
   },
   "teams": [
     { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 24 },
@@ -140,38 +149,25 @@ README.md       — how the site works + admin instructions
     { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 17 }
   ],
   "weeklySteps": {
-    "owls":       [1182340, 1240118, 1105472, 0, 0, 0],
-    "bumblebees": [1020551, 1168724, 1092308, 0, 0, 0],
-    "collies":    [1310204, 1201559, 1254867, 0, 0, 0],
-    "dolphins":   [892410, 1004882, 968344, 0, 0, 0]
+    "owls":       [0, 0, 0, 0, 0, 0],
+    "bumblebees": [0, 0, 0, 0, 0, 0],
+    "collies":    [0, 0, 0, 0, 0, 0],
+    "dolphins":   [0, 0, 0, 0, 0, 0]
   },
-  "funds": { "owls": 1080, "bumblebees": 965, "collies": 1245, "dolphins": 890 },
-  "topIndividuals": [
-    { "name": "Priya S.", "team": "collies", "steps": 289410 },
-    { "name": "Tom W.", "team": "owls", "steps": 274982 },
-    { "name": "Aisha K.", "team": "bumblebees", "steps": 268540 },
-    { "name": "Dan M.", "team": "collies", "steps": 261077 },
-    { "name": "Sophie L.", "team": "dolphins", "steps": 249315 }
-  ],
+  "funds": { "owls": 0, "bumblebees": 0, "collies": 0, "dolphins": 0 },
+  "topIndividuals": [],
   "events": [
-    { "title": "Battersea Park parkrun", "date": "2026-07-11", "time": "9:00am",
-      "location": "Battersea Park, London",
-      "description": "Join the office takeover of the Battersea Park parkrun! A free, timed 5K around the park — walk, jog or run. Every colleague who takes part donates £2 to Trees for Cities, and every step counts towards your team total.",
+    { "title": "5k fun run", "date": "2026-08-05", "time": "6pm",
+      "location": "starting at RRA office",
+      "description": "Join the office fun run around St James Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!",
       "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
-      "linkLabel": "Sign up & pledge your £2", "featured": true },
-    { "title": "Lunchtime Thames Loop", "date": "2026-07-15", "time": "12:30pm",
-      "location": "Meet in the lobby",
-      "description": "A brisk 45-minute guided walk along the Thames Path. All teams welcome — bring your step counter!",
-      "link": "", "linkLabel": "", "featured": false },
-    { "title": "Quiz Night for Trees", "date": "2026-07-16", "time": "6:00pm",
-      "location": "4th floor kitchen",
-      "description": "Tree-themed pub quiz. £5 entry per person, all proceeds to Trees for Cities. Winning table earns 50,000 bonus steps for their team.",
-      "link": "", "linkLabel": "", "featured": false },
-    { "title": "Bake Sale & Step Swap", "date": "2026-07-21", "time": "10:00am – 2:00pm",
-      "location": "Reception",
-      "description": "Buy a treat, fund a tree. Cakes priced in 'steps' — pay what you like, everything goes to the charity pot.",
-      "link": "", "linkLabel": "", "featured": false },
-    { "title": "Grand Finale & Awards Evening", "date": "2026-07-30", "time": "5:30pm",
+      "linkLabel": "Sign up & pledge your £5", "featured": true, "icon": "🏃" },
+    { "title": "Darts and raffle night", "date": "2026-08-06", "time": "6pm",
+      "location": "RRA office",
+      "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. The cheapest night out in Mayfair at a cost of £5!",
+      "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
+      "linkLabel": "Sign up & pledge your £5", "featured": true, "icon": "🎯" },
+    { "title": "Grand Finale & Awards Evening", "date": "2026-08-27", "time": "5:30pm",
       "location": "The Boardroom",
       "description": "The winning team is crowned! Final leaderboards revealed, prizes for top steppers, and the grand fundraising total presented to Trees for Cities.",
       "link": "", "linkLabel": "", "featured": false }
@@ -179,11 +175,25 @@ README.md       — how the site works + admin instructions
 }
 ```
 
+Zero-data behaviour: with `dataThroughWeek: 0` the hero pill reads "Starts 15
+July · sign up now", the week table and top-steppers board show friendly
+"results will appear after week 1" messages, and all journey markers sit at
+London.
+
 All pages fetch this file with a cache-busting query string
 (`data/data.json?t=<timestamp>`) and render everything client-side.
 Escape all user-editable strings before inserting into HTML.
 
 ### 3.5 Dashboard (`index.html`)
+
+Hero extras (below the lede): a translucent call-out box — "**Want in?** To
+join the step challenge, sign up and pledge **£10** to Trees for Cities —
+then start walking for your team." — followed by two pill buttons: a white
+"Sign up & pledge £10 →" linking to `settings.signupUrl`, and an outlined
+"Donate on GoFundMe" linking to `settings.goFundMeUrl`. When `goFundMeUrl`
+is empty, GoFundMe buttons render dimmed and unclickable with the text
+"GoFundMe — coming soon". A second GoFundMe button sits inside the
+fundraising gradient banner.
 
 Two-column layout (main column + 330px sticky sidebar; single column on
 mobile). Main column, in order:
@@ -203,10 +213,11 @@ mobile). Main column, in order:
    by money raised with bars.
 
 Sidebar, in order:
-1. **Featured event card** — the event with `"featured": true`, on a
-   cobalt→purple gradient with a giant translucent 🏃 emoji in the corner, a
-   cyan "FEATURED EVENT" pill, date/time/location line, description, and a
-   white pill button using `linkLabel` → `link` (new tab).
+1. **Featured event cards** — every event with `"featured": true`, stacked
+   in date order, each on a cobalt→purple gradient with a giant translucent
+   emoji (the event's `icon` field) in the corner, a cyan "FEATURED EVENT"
+   pill, date/time/location line, description, and a white pill button using
+   `linkLabel` → `link` (new tab).
 2. **📌 Upcoming events** — the remaining events sorted by date: uppercase
    bright-blue date line, bold title, location, small description, optional
    link.
@@ -260,11 +271,14 @@ Page contents:
 - **Publishing setup card**: two fields — repository `owner/name` and GitHub
   token — remembered in localStorage only. Explain in the page copy that the
   token stays in the browser.
-- **Form cards** generated from data.json: "results through week" selector;
-  per-team blocks (left border in team colour) with 6 weekly step inputs;
-  per-team £ raised; top-stepper rows (name / team select / steps / remove +
-  add button); event editors (title, date, time, location, description, link,
-  link label, featured checkbox, remove + add button).
+- **Links card**: fields for `settings.signupUrl` and `settings.goFundMeUrl`
+  so the admin can set the sign-up sheet and GoFundMe page without code.
+- **Form cards** generated from data.json: "results through week" selector
+  (including a week-0 "Not started yet" option); per-team blocks (left
+  border in team colour) with 6 weekly step inputs; per-team £ raised;
+  top-stepper rows (name / team select / steps / remove + add button); event
+  editors (title, date, time, location, description, link, link label, emoji
+  icon, featured checkbox, remove + add button).
 - **Publish**: collect the forms back into the data.json shape, then via the
   GitHub contents API (`/repos/{repo}/contents/data/data.json`): GET the
   current file for its `sha`, then PUT with base64 UTF-8 content, commit
@@ -274,9 +288,10 @@ Page contents:
 
 ### 3.8 Publish & verify (Claude: do this too)
 
-1. Serve the folder locally and verify: dashboard totals (13,441,779 steps /
-   10,081 km / £4,180 / 88 walkers), Border Collies leading, map renders with
-   4 markers, admin unlocks with `trees2026` and builds 24 step inputs.
+1. Serve the folder locally and verify: hero pill says "Starts 15 July",
+   both featured event cards render with their sign-up buttons, GoFundMe
+   buttons show "coming soon", the map renders with 4 markers at London, and
+   the admin unlocks with `trees2026` and builds 24 step inputs.
 2. `git init`, commit everything, push to the user's repo
    (`https://x-access-token:<TOKEN>@github.com/<user>/<repo>.git`), then
    reset the remote URL so the token isn't stored in git config.
@@ -292,12 +307,13 @@ Page contents:
 ## Part 4 — Success checklist
 
 - [ ] `https://<your-username>.github.io/<repo-name>/` loads with the blue
-      hero and four stat cards (13,441,779 steps · 10,081 km · £4,180 · 88).
-- [ ] The Border Collies 🐕 lead the team board with a crown.
-- [ ] "The Journey" shows a map with a route from London and 4 team markers
-      in Italy/Greece.
-- [ ] The sidebar features the Battersea Park parkrun with a working sign-up
-      button, and the Trees for Cities link works.
+      hero, the strikethrough "d" in the site name, the £10 sign-up call-out
+      with its buttons, and four stat cards (all zeros pre-launch).
+- [ ] "The Journey" shows a map with a dashed route from London to Istanbul
+      and 4 team markers at London.
+- [ ] The sidebar features the 5k fun run and the Darts and raffle night,
+      each with a "Sign up & pledge your £5" button, and the Trees for
+      Cities link works.
 - [ ] The footer "Admin" link + passcode `trees2026` opens the admin console.
 - [ ] Enter your token there, change a number, click **Publish changes**, and
       the public site updates within a couple of minutes.

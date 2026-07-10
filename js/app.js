@@ -56,12 +56,48 @@ function showLoadError(err) {
 
 /* ---------- dashboard ---------- */
 
+function weekPillText(suffix) {
+  const s = DATA.settings;
+  if (s.dataThroughWeek < 1) {
+    const d = new Date(s.startDate + "T12:00:00");
+    return `Starts ${d.toLocaleDateString("en-GB", { day: "numeric", month: "long" })} · sign up now`;
+  }
+  return `Week ${s.dataThroughWeek} of ${s.totalWeeks} · ${suffix}`;
+}
+
+function wireCtaButtons() {
+  const s = DATA.settings;
+
+  const pledge = document.getElementById("signup-pledge");
+  if (pledge && s.signupPledge) pledge.textContent = s.signupPledge;
+
+  const signup = document.getElementById("signup-btn");
+  if (signup) {
+    signup.href = s.signupUrl || "#";
+    signup.textContent = `Sign up & pledge ${s.signupPledge || "£10"} →`;
+  }
+
+  [document.getElementById("gofundme-btn"), document.getElementById("gofundme-btn-2")].forEach((btn) => {
+    if (!btn) return;
+    if (s.goFundMeUrl) {
+      btn.href = s.goFundMeUrl;
+      btn.textContent = "Donate on GoFundMe →";
+    } else {
+      btn.removeAttribute("href");
+      btn.classList.add("btn-soon");
+      btn.textContent = "GoFundMe — coming soon";
+    }
+  });
+}
+
 function renderDashboard() {
   const s = DATA.settings;
 
   // Week pill
   const pill = document.getElementById("week-pill-text");
-  if (pill) pill.textContent = `Week ${s.dataThroughWeek} of ${s.totalWeeks} · results in`;
+  if (pill) pill.textContent = weekPillText("results in");
+
+  wireCtaButtons();
 
   // Ranked teams
   const ranked = [...DATA.teams]
@@ -118,6 +154,15 @@ function renderWeekTable() {
   if (!el) return;
   const s = DATA.settings;
   const weeks = s.dataThroughWeek;
+
+  if (weeks < 1) {
+    const d = new Date(s.startDate + "T12:00:00");
+    el.innerHTML = `<tbody><tr><td style="text-align:left;padding:20px 22px;color:#585656">
+      The challenge starts on <strong>${d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</strong> —
+      weekly results will appear here after week 1.
+    </td></tr></tbody>`;
+    return;
+  }
   let head = "<thead><tr><th>Team</th>";
   for (let w = 1; w <= weeks; w++) head += `<th>Week ${w}</th>`;
   head += "<th>Total</th></tr></thead>";
@@ -141,6 +186,13 @@ function renderIndividualBoard() {
   const el = document.getElementById("individual-board");
   if (!el) return;
   const top = [...DATA.topIndividuals].sort((a, b) => b.steps - a.steps).slice(0, 5);
+
+  if (!top.length) {
+    el.innerHTML = `<div style="padding:20px 22px;color:#585656">
+      The top 5 steppers will appear here once the first week's results are in. It could be you! ⭐
+    </div>`;
+    return;
+  }
   const max = Math.max(...top.map((p) => p.steps), 1);
   el.innerHTML = top
     .map((p, i) => {
@@ -171,7 +223,9 @@ function renderFundBoard(totalMoney) {
   if (treesNote) {
     // Trees for Cities: roughly £6 plants an urban tree
     const trees = Math.floor(totalMoney / 6);
-    treesNote.innerHTML = `That's enough to plant roughly <strong>${fmt(trees)} urban trees</strong> 🌳`;
+    treesNote.innerHTML = trees > 0
+      ? `That's enough to plant roughly <strong>${fmt(trees)} urban trees</strong> 🌳`
+      : `Every £6 raised plants roughly one urban tree 🌳`;
   }
 
   const ranked = [...DATA.teams]
@@ -204,18 +258,23 @@ function renderEvents() {
   if (!featuredEl && !listEl) return;
 
   const events = [...DATA.events].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
-  const featured = events.find((e) => e.featured);
-  const rest = events.filter((e) => e !== featured);
+  const featured = events.filter((e) => e.featured);
+  const rest = events.filter((e) => !e.featured);
 
-  if (featuredEl && featured) {
-    featuredEl.innerHTML = `
-      <div class="event-featured">
-        <span class="flag">Featured event</span>
-        <h3>${esc(featured.title)}</h3>
-        <div class="when">${fmtDate(featured.date)}${featured.time ? " · " + esc(featured.time) : ""}${featured.location ? " · " + esc(featured.location) : ""}</div>
-        <p>${esc(featured.description)}</p>
-        ${featured.link ? `<a class="btn" href="${esc(featured.link)}" target="_blank" rel="noopener">${esc(featured.linkLabel || "Sign up")} →</a>` : ""}
-      </div>`;
+  if (featuredEl && featured.length) {
+    featuredEl.innerHTML = `<div class="featured-stack">` + featured
+      .map(
+        (ev) => `
+        <div class="event-featured">
+          <span class="bg-emoji">${esc(ev.icon || "🏃")}</span>
+          <span class="flag">Featured event</span>
+          <h3>${esc(ev.title)}</h3>
+          <div class="when">${fmtDate(ev.date)}${ev.time ? " · " + esc(ev.time) : ""}${ev.location ? " · " + esc(ev.location) : ""}</div>
+          <p>${esc(ev.description)}</p>
+          ${ev.link ? `<a class="btn" href="${esc(ev.link)}" target="_blank" rel="noopener">${esc(ev.linkLabel || "Sign up")} →</a>` : ""}
+        </div>`
+      )
+      .join("") + `</div>`;
   }
 
   if (listEl) {

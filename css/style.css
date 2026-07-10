@@ -104,6 +104,15 @@ a:hover { text-decoration: underline; }
   text-transform: uppercase;
 }
 
+/* The 'd' in "Fund" is struck through: this is Fun raising as much as Fund raising */
+.fun-d {
+  position: relative;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.14em;
+  text-decoration-color: var(--cyan);
+}
+.site-footer .fun-d { text-decoration-color: var(--pink); }
+
 .site-nav {
   display: flex;
   gap: 6px;
@@ -168,6 +177,38 @@ a:hover { text-decoration: underline; }
   animation: pulse 2s infinite;
 }
 @keyframes pulse { 50% { opacity: 0.35; } }
+
+.hero .join-note {
+  margin-top: 18px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  padding: 12px 18px;
+  max-width: 640px;
+}
+.hero .join-note strong { color: #fff; }
+
+.hero-cta {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hero-cta .btn { margin-top: 0; }
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.btn-outline:hover { border-color: #fff; box-shadow: none; }
+
+.btn.btn-soon {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
 
 /* ---------- Stat strip ---------- */
 
@@ -395,15 +436,16 @@ table.week-table td .team-chip { margin-right: 8px; }
   position: relative;
   overflow: hidden;
 }
-.event-featured::after {
-  content: "🏃";
+.event-featured .bg-emoji {
   position: absolute;
   right: -10px;
   bottom: -18px;
   font-size: 90px;
   opacity: 0.15;
   transform: rotate(-8deg);
+  pointer-events: none;
 }
+.featured-stack { display: flex; flex-direction: column; gap: 22px; }
 .event-featured .flag {
   display: inline-block;
   background: var(--cyan);

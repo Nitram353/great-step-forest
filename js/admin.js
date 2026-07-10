@@ -56,9 +56,13 @@ function buildForms() {
   document.getElementById("gh-repo").value = localStorage.getItem("gsf-repo") || "Nitram353/great-step-forest";
   document.getElementById("gh-token").value = localStorage.getItem("gsf-token") || "";
 
+  // links
+  document.getElementById("set-signup-url").value = d.settings.signupUrl || "";
+  document.getElementById("set-gofundme-url").value = d.settings.goFundMeUrl || "";
+
   // data-through-week selector
   const sel = document.getElementById("data-through-week");
-  sel.innerHTML = "";
+  sel.innerHTML = `<option value="0" ${d.settings.dataThroughWeek === 0 ? "selected" : ""}>Not started yet</option>`;
   for (let w = 1; w <= d.settings.totalWeeks; w++) {
     sel.insertAdjacentHTML("beforeend", `<option value="${w}" ${w === d.settings.dataThroughWeek ? "selected" : ""}>Week ${w}</option>`);
   }
@@ -100,7 +104,7 @@ function buildForms() {
   evRows.innerHTML = "";
   d.events.forEach((e) => addEventRow(e));
   document.getElementById("add-event").onclick = () =>
-    addEventRow({ title: "", date: "", time: "", location: "", description: "", link: "", linkLabel: "", featured: false });
+    addEventRow({ title: "", date: "", time: "", location: "", description: "", link: "", linkLabel: "", featured: false, icon: "" });
 
   document.getElementById("publish-btn").onclick = publish;
   document.getElementById("download-btn").onclick = downloadJson;
@@ -137,9 +141,10 @@ function addEventRow(e) {
     </div>
     <div class="field"><label>Location</label><input type="text" class="ev-loc" value="${esc(e.location)}" /></div>
     <div class="field"><label>Description</label><textarea class="ev-desc" rows="2">${esc(e.description)}</textarea></div>
-    <div class="grid-2">
+    <div class="grid-3">
       <div class="field"><label>Link (optional)</label><input type="url" class="ev-link" placeholder="https://…" value="${esc(e.link)}" /></div>
       <div class="field"><label>Link label</label><input type="text" class="ev-link-label" placeholder="Sign up" value="${esc(e.linkLabel)}" /></div>
+      <div class="field"><label>Emoji (featured card art)</label><input type="text" class="ev-icon" placeholder="🏃" value="${esc(e.icon || "")}" /></div>
     </div>
     <div class="checkbox-row">
       <input type="checkbox" class="ev-featured" ${e.featured ? "checked" : ""} />
@@ -157,6 +162,8 @@ function collectForms() {
   const d = workingData;
 
   d.settings.dataThroughWeek = Number(document.getElementById("data-through-week").value);
+  d.settings.signupUrl = document.getElementById("set-signup-url").value.trim();
+  d.settings.goFundMeUrl = document.getElementById("set-gofundme-url").value.trim();
 
   document.querySelectorAll("[data-steps-team]").forEach((input) => {
     const team = input.dataset.stepsTeam;
@@ -186,6 +193,7 @@ function collectForms() {
       description: row.querySelector(".ev-desc").value.trim(),
       link: row.querySelector(".ev-link").value.trim(),
       linkLabel: row.querySelector(".ev-link-label").value.trim(),
+      icon: row.querySelector(".ev-icon").value.trim(),
       featured: row.querySelector(".ev-featured").checked,
     }))
     .filter((e) => e.title);

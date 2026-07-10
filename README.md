@@ -1,6 +1,7 @@
-# The Great Step Forest 🌳
+# RRA Intern Fun~~d~~ Raising Challenge 🌳
 
 A London office step-challenge website in aid of [Trees for Cities](https://www.treesforcities.org).
+See [ADMIN-GUIDE.md](ADMIN-GUIDE.md) for the week-by-week admin walkthrough.
 
 Four teams compete over six weeks to walk the furthest and raise the most money.
 The site shows team and individual leaderboards, fundraising totals, competition

@@ -71,9 +71,8 @@ function lastMilestone(km) {
 }
 
 function renderJourney() {
-  const s = DATA.settings;
   const pill = document.getElementById("week-pill-text");
-  if (pill) pill.textContent = `Week ${s.dataThroughWeek} of ${s.totalWeeks} · the race is on`;
+  if (pill) pill.textContent = weekPillText("the race is on");
 
   const teams = [...DATA.teams]
     .map((t) => {
