@@ -75,15 +75,16 @@ A website for a London office charity competition called the **RRA Intern
 Fund Raising Challenge** — everywhere the name is displayed, the letter "d"
 in "Fund" gets a cyan strikethrough (a `<span class="fun-d">d</span>` with
 `text-decoration: line-through`), the joke being that it's Fun raising as
-much as Fund raising. Four teams compete for 6 weeks to raise money for the
-charity **Trees for Cities** (link to https://www.treesforcities.org so
-visitors understand the purpose). Participants join by signing up on a
-shared Google Sheet and pledging £10. Teams track their weekly step counts;
-steps convert to distance (0.75 m per step); the team that "travels" the
-furthest from London over 6 weeks wins. Donations are collected on a
-GoFundMe page (URL configurable; buttons show "coming soon" until it's set).
-The public site is read-only; one admin updates the numbers through a hidden
-admin page.
+much as Fund raising. Four teams compete for 3 weeks (15 July – 6 August;
+the final day counts into week 3) to raise money for the charity **Trees for
+Cities** (link to https://www.treesforcities.org so visitors understand the
+purpose). Participants join the company challenge on **Stridekick** (which
+tracks their steps) and pledge £10. Teams' weekly step counts convert to
+distance (0.75 m per step); the team that "travels" the furthest from London
+wins. Donations are collected on a GoFundMe page. Both the Stridekick and
+GoFundMe URLs are configurable in settings; their buttons show "coming soon"
+while empty. The public site is read-only; one admin updates the numbers
+through a hidden admin page.
 
 ### 3.2 Files
 
@@ -115,7 +116,7 @@ README.md       — how the site works + admin instructions
   Journey") where the active page is a white pill with cobalt text.
 - Hero (both public pages): deep cobalt with two soft radial glows (cyan top
   right, lavender bottom left); an uppercase "WEEK 3 OF 6 · RESULTS IN" pill
-  with a pulsing cyan dot; a big Fraunces headline ("Four teams. Six weeks.
+  with a pulsing cyan dot; a big Fraunces headline ("Four teams. Three weeks.
   Millions of steps for the city's trees."); a lede paragraph linking to
   Trees for Cities in cyan.
 - A stat strip of 4 white cards overlapping the hero bottom by ~78px
@@ -135,10 +136,10 @@ README.md       — how the site works + admin instructions
     "charityName": "Trees for Cities",
     "charityUrl": "https://www.treesforcities.org",
     "startDate": "2026-07-15",
-    "totalWeeks": 6,
+    "totalWeeks": 3,
     "dataThroughWeek": 0,
     "stepLengthMeters": 0.75,
-    "signupUrl": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
+    "signupUrl": "",
     "signupPledge": "£10",
     "goFundMeUrl": ""
   },
@@ -149,10 +150,10 @@ README.md       — how the site works + admin instructions
     { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 17 }
   ],
   "weeklySteps": {
-    "owls":       [0, 0, 0, 0, 0, 0],
-    "bumblebees": [0, 0, 0, 0, 0, 0],
-    "collies":    [0, 0, 0, 0, 0, 0],
-    "dolphins":   [0, 0, 0, 0, 0, 0]
+    "owls":       [0, 0, 0],
+    "bumblebees": [0, 0, 0],
+    "collies":    [0, 0, 0],
+    "dolphins":   [0, 0, 0]
   },
   "funds": { "owls": 0, "bumblebees": 0, "collies": 0, "dolphins": 0 },
   "topIndividuals": [],
@@ -167,7 +168,7 @@ README.md       — how the site works + admin instructions
       "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. The cheapest night out in Mayfair at a cost of £5!",
       "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
       "linkLabel": "Sign up & pledge your £5", "featured": true, "icon": "🎯" },
-    { "title": "Grand Finale & Awards Evening", "date": "2026-08-27", "time": "5:30pm",
+    { "title": "Grand Finale & Awards Evening", "date": "2026-08-13", "time": "5:30pm",
       "location": "The Boardroom",
       "description": "The winning team is crowned! Final leaderboards revealed, prizes for top steppers, and the grand fundraising total presented to Trees for Cities.",
       "link": "", "linkLabel": "", "featured": false }
@@ -187,12 +188,13 @@ Escape all user-editable strings before inserting into HTML.
 ### 3.5 Dashboard (`index.html`)
 
 Hero extras (below the lede): a translucent call-out box — "**Want in?** To
-join the step challenge, sign up and pledge **£10** to Trees for Cities —
-then start walking for your team." — followed by two pill buttons: a white
-"Sign up & pledge £10 →" linking to `settings.signupUrl`, and an outlined
-"Donate on GoFundMe" linking to `settings.goFundMeUrl`. When `goFundMeUrl`
-is empty, GoFundMe buttons render dimmed and unclickable with the text
-"GoFundMe — coming soon". A second GoFundMe button sits inside the
+join the step challenge, sign up to the company challenge on **Stridekick**
+— that's where your steps are tracked — and pledge **£10** to Trees for
+Cities." — followed by two pill buttons: a white "Join on Stridekick &
+pledge £10 →" linking to `settings.signupUrl`, and an outlined "Donate on
+GoFundMe" linking to `settings.goFundMeUrl`. While either URL is empty its
+button renders dimmed and unclickable ("Stridekick sign-up — coming soon" /
+"GoFundMe — coming soon"). A second GoFundMe button sits inside the
 fundraising gradient banner.
 
 Two-column layout (main column + 330px sticky sidebar; single column on
@@ -271,11 +273,12 @@ Page contents:
 - **Publishing setup card**: two fields — repository `owner/name` and GitHub
   token — remembered in localStorage only. Explain in the page copy that the
   token stays in the browser.
-- **Links card**: fields for `settings.signupUrl` and `settings.goFundMeUrl`
-  so the admin can set the sign-up sheet and GoFundMe page without code.
+- **Links card**: fields for `settings.signupUrl` (the Stridekick challenge
+  URL) and `settings.goFundMeUrl` so the admin can set both without code.
 - **Form cards** generated from data.json: "results through week" selector
   (including a week-0 "Not started yet" option); per-team blocks (left
-  border in team colour) with 6 weekly step inputs; per-team £ raised;
+  border in team colour) with one step input per week (`totalWeeks`, so 3);
+  per-team £ raised;
   top-stepper rows (name / team select / steps / remove + add button); event
   editors (title, date, time, location, description, link, link label, emoji
   icon, featured checkbox, remove + add button).
@@ -289,9 +292,10 @@ Page contents:
 ### 3.8 Publish & verify (Claude: do this too)
 
 1. Serve the folder locally and verify: hero pill says "Starts 15 July",
-   both featured event cards render with their sign-up buttons, GoFundMe
-   buttons show "coming soon", the map renders with 4 markers at London, and
-   the admin unlocks with `trees2026` and builds 24 step inputs.
+   both featured event cards render with their sign-up buttons, the
+   Stridekick and GoFundMe buttons show "coming soon", the map renders with
+   4 markers at London, and the admin unlocks with `trees2026` and builds
+   12 step inputs (4 teams × 3 weeks).
 2. `git init`, commit everything, push to the user's repo
    (`https://x-access-token:<TOKEN>@github.com/<user>/<repo>.git`), then
    reset the remote URL so the token isn't stored in git config.
@@ -307,8 +311,8 @@ Page contents:
 ## Part 4 — Success checklist
 
 - [ ] `https://<your-username>.github.io/<repo-name>/` loads with the blue
-      hero, the strikethrough "d" in the site name, the £10 sign-up call-out
-      with its buttons, and four stat cards (all zeros pre-launch).
+      hero, the strikethrough "d" in the site name, the £10 Stridekick
+      call-out with its buttons, and four stat cards (all zeros pre-launch).
 - [ ] "The Journey" shows a map with a dashed route from London to Istanbul
       and 4 team markers at London.
 - [ ] The sidebar features the 5k fun run and the Darts and raffle night,

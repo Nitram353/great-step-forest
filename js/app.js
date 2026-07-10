@@ -73,8 +73,14 @@ function wireCtaButtons() {
 
   const signup = document.getElementById("signup-btn");
   if (signup) {
-    signup.href = s.signupUrl || "#";
-    signup.textContent = `Sign up & pledge ${s.signupPledge || "£10"} →`;
+    if (s.signupUrl) {
+      signup.href = s.signupUrl;
+      signup.textContent = `Join on Stridekick & pledge ${s.signupPledge || "£10"} →`;
+    } else {
+      signup.removeAttribute("href");
+      signup.classList.add("btn-soon");
+      signup.textContent = "Stridekick sign-up — coming soon";
+    }
   }
 
   [document.getElementById("gofundme-btn"), document.getElementById("gofundme-btn-2")].forEach((btn) => {

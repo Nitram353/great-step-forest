@@ -5,10 +5,10 @@
     "charityName": "Trees for Cities",
     "charityUrl": "https://www.treesforcities.org",
     "startDate": "2026-07-15",
-    "totalWeeks": 6,
+    "totalWeeks": 3,
     "dataThroughWeek": 0,
     "stepLengthMeters": 0.75,
-    "signupUrl": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?gid=0#gid=0",
+    "signupUrl": "",
     "signupPledge": "£10",
     "goFundMeUrl": ""
   },
@@ -43,38 +43,10 @@
     }
   ],
   "weeklySteps": {
-    "owls": [
-      50000,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "bumblebees": [
-      25000,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "collies": [
-      22000,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "dolphins": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
+    "owls": [50000, 0, 0],
+    "bumblebees": [25000, 0, 0],
+    "collies": [22000, 0, 0],
+    "dolphins": [0, 0, 0]
   },
   "funds": {
     "owls": 0,
@@ -114,7 +86,7 @@
     },
     {
       "title": "Grand Finale & Awards Evening",
-      "date": "2026-08-27",
+      "date": "2026-08-13",
       "time": "5:30pm",
       "location": "The Boardroom",
       "description": "The winning team is crowned! Final leaderboards revealed, prizes for top steppers, and the grand fundraising total presented to Trees for Cities.",

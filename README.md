@@ -3,7 +3,8 @@
 A London office step-challenge website in aid of [Trees for Cities](https://www.treesforcities.org).
 See [ADMIN-GUIDE.md](ADMIN-GUIDE.md) for the week-by-week admin walkthrough.
 
-Four teams compete over six weeks to walk the furthest and raise the most money.
+Four teams compete over three weeks (15 July – 6 August; the final day counts
+into week 3) to walk the furthest and raise the most money.
 The site shows team and individual leaderboards, fundraising totals, competition
 events, and a live map of each team's cumulative journey from London towards Istanbul.
 

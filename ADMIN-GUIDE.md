@@ -30,12 +30,14 @@ friendly form that rewrites that file for you. Nothing else ever changes.
 ## 3. How step tracking works (participants → teams)
 
 The website keeps score **per team per week**, plus a **top 5 individuals**
-list. Individual step counts for every participant live in your sign-up
-Google Sheet, not on the website — each week you (or a team captain)
-collect everyone's weekly steps there, and the sheet adds them up per team.
-A simple layout for the sheet: one row per person with columns
-`Name | Team | Wk1 | Wk2 | Wk3 | Wk4 | Wk5 | Wk6`, and a small totals table
-using `SUMIF` per team. Then you copy four team totals into the website.
+list. Individual step counts live in **Stridekick** — everyone joins the
+company challenge there and their phone/watch tracks their steps
+automatically. Each week you read the numbers out of Stridekick (each team's
+total, and the individual leaderboard) and type four team totals plus the
+top 5 into the website's admin page.
+
+The challenge runs **3 weeks, 15 July – 6 August**. The final day
+(Wednesday 6 August) simply counts into the week-3 totals.
 
 ## 4. The weekly routine (5 minutes)
 
@@ -43,29 +45,32 @@ Say week 1 has just finished:
 
 1. Open the admin page and unlock it.
 2. **👟 Weekly steps** — for each of the four teams, type the team's week-1
-   total into the **Wk 1** box. Leave future weeks at 0.
+   total (from Stridekick) into the **Wk 1** box. Leave future weeks at 0.
 3. At the top of that card, set **"Results entered through week"** to
    **Week 1**. (This controls what the site shows — the leaderboards, the
-   week-by-week table and the "Week 1 of 6" badge all follow it.)
+   week-by-week table and the "Week 1 of 3" badge all follow it.)
 4. **💚 Money raised** — update each team's running £ total (sign-up pledges,
    event pledges, GoFundMe donations attributed to that team — however you
    want to count it).
-5. **⭐ Top individual steppers** — look at your Google Sheet, find the five
-   people with the most *cumulative* steps, and enter them: name (first name
-   + initial is plenty), their team, and their total steps. Use **+ Add
-   person** / **Remove** to manage the list.
+5. **⭐ Top individual steppers** — from Stridekick's individual leaderboard,
+   take the five people with the most *cumulative* steps and enter them:
+   name (first name + initial is plenty), their team, and their total steps.
+   Use **+ Add person** / **Remove** to manage the list.
 6. Click **🚀 Publish changes**. You'll see "✅ Published!" — the public site
    updates within a minute or two. Refresh the home page to admire it.
 
 Each following week: add the new week's numbers into the next **Wk** box,
 move the "through week" selector on by one, refresh the top-5 and money,
-publish.
+publish. For the last entry, remember to include Wednesday 6 August's steps
+in the week-3 numbers.
 
 ## 5. Other things you can change on the admin page
 
-- **🔗 Sign-up & donation links** — the sign-up sheet URL and the GoFundMe
-  URL. The home-page GoFundMe buttons show "coming soon" until you paste the
-  real GoFundMe link here and publish.
+- **🔗 Sign-up & donation links** — the Stridekick challenge URL and the
+  GoFundMe URL. The matching home-page buttons show "coming soon" until you
+  paste the real link here and publish. (The two featured events sign up via
+  the Google Sheet — those links are set on each event in the Events
+  section.)
 - **📌 Events** — add/edit/remove events. Tick **Featured** to give an event
   the big gradient card at the top of the sidebar (the 5k fun run and the
   Darts & raffle night are both featured now); the emoji box sets the big
