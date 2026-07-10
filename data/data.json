@@ -13,16 +13,68 @@
     "goFundMeUrl": ""
   },
   "teams": [
-    { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 24 },
-    { "id": "bumblebees", "name": "The Bumblebees", "color": "#f0a800", "emoji": "🐝", "members": 19 },
-    { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 28 },
-    { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 17 }
+    {
+      "id": "owls",
+      "name": "The Owls",
+      "color": "#0f8a3d",
+      "emoji": "🦉",
+      "members": 24
+    },
+    {
+      "id": "bumblebees",
+      "name": "The Bumblebees",
+      "color": "#f0a800",
+      "emoji": "🐝",
+      "members": 19
+    },
+    {
+      "id": "collies",
+      "name": "The Border Collies",
+      "color": "#d92632",
+      "emoji": "🐕",
+      "members": 28
+    },
+    {
+      "id": "dolphins",
+      "name": "The Dolphins",
+      "color": "#2d53ed",
+      "emoji": "🐬",
+      "members": 17
+    }
   ],
   "weeklySteps": {
-    "owls":       [0, 0, 0, 0, 0, 0],
-    "bumblebees": [0, 0, 0, 0, 0, 0],
-    "collies":    [0, 0, 0, 0, 0, 0],
-    "dolphins":   [0, 0, 0, 0, 0, 0]
+    "owls": [
+      50000,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "bumblebees": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "collies": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dolphins": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
   },
   "funds": {
     "owls": 0,
@@ -40,8 +92,8 @@
       "description": "Join the office fun run around St James Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!",
       "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
       "linkLabel": "Sign up & pledge your £5",
-      "featured": true,
-      "icon": "🏃"
+      "icon": "🏃",
+      "featured": true
     },
     {
       "title": "Darts and raffle night",
@@ -51,8 +103,8 @@
       "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. The cheapest night out in Mayfair at a cost of £5!",
       "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
       "linkLabel": "Sign up & pledge your £5",
-      "featured": true,
-      "icon": "🎯"
+      "icon": "🎯",
+      "featured": true
     },
     {
       "title": "Grand Finale & Awards Evening",
@@ -62,6 +114,7 @@
       "description": "The winning team is crowned! Final leaderboards revealed, prizes for top steppers, and the grand fundraising total presented to Trees for Cities.",
       "link": "",
       "linkLabel": "",
+      "icon": "",
       "featured": false
     }
   ]
