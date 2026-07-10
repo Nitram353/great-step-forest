@@ -8,7 +8,7 @@
     "totalWeeks": 6,
     "dataThroughWeek": 0,
     "stepLengthMeters": 0.75,
-    "signupUrl": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
+    "signupUrl": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?gid=0#gid=0",
     "signupPledge": "£10",
     "goFundMeUrl": ""
   },
@@ -52,7 +52,7 @@
       0
     ],
     "bumblebees": [
-      0,
+      25000,
       0,
       0,
       0,
@@ -82,7 +82,13 @@
     "collies": 0,
     "dolphins": 0
   },
-  "topIndividuals": [],
+  "topIndividuals": [
+    {
+      "name": "Zoe F",
+      "team": "collies",
+      "steps": 10000
+    }
+  ],
   "events": [
     {
       "title": "5k fun run",
