@@ -8,9 +8,9 @@
     "totalWeeks": 3,
     "dataThroughWeek": 0,
     "stepLengthMeters": 0.75,
-    "signupUrl": "",
+    "signupUrl": "https://worldwalking.com/",
     "signupPledge": "£10",
-    "goFundMeUrl": ""
+    "goFundMeUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL"
   },
   "teams": [
     {
@@ -70,35 +70,29 @@
     "collies": 0,
     "dolphins": 0
   },
-  "topIndividuals": [
-    {
-      "name": "Zoe F",
-      "team": "collies",
-      "steps": 10000
-    }
-  ],
+  "topIndividuals": [],
   "events": [
     {
-      "title": "5k fun run",
+      "title": "3km fun run",
       "date": "2026-08-05",
       "time": "6pm",
       "location": "starting at RRA office",
-      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!",
-      "link": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?gid=0#gid=0",
+      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!(Deadline to sign up: 17th of July)",
+      "link": "",
       "linkLabel": "Sign up & pledge your £5",
-      "icon": "🏃",
+      "icon": "",
       "featured": true
     },
     {
-      "title": "Darts and raffle night",
-      "date": "2026-08-06",
-      "time": "6pm",
-      "location": "RRA office",
-      "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. Take a look at the Sign up sheet and get ready for a great evening!",
-      "link": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?gid=0#gid=0",
-      "linkLabel": "Sign up & pledge your £5",
-      "icon": "🎯",
-      "featured": true
+      "title": "Sip & Paint",
+      "date": "2026-07-21",
+      "time": "4pm",
+      "location": "RRA office (2nd floor kitchen)",
+      "description": "Show off your artistic skills and paint a portrait of a colleague! We provide all the materials. Voting for the best portrait begins on 22 July. Win valuable points for your rally team!",
+      "link": "",
+      "linkLabel": "",
+      "icon": "😊",
+      "featured": false
     }
   ]
 }
