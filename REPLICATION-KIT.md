@@ -73,8 +73,11 @@ GitHub username and token when you need them, and never commit the token.**
 
 A website for a London office charity competition called the **RRA Intern
 Fund Raising Challenge** — everywhere the name is displayed, the letter "d"
-in "Fund" gets a cyan strikethrough (a `<span class="fun-d">d</span>` with
-`text-decoration: line-through`), the joke being that it's Fun raising as
+in "Fund" is crossed out by hand (a `<span class="fun-d">d</span>` whose
+`::after` overlays a rough two-stroke X — an inline SVG of two curved
+marker strokes in cyan, rounded caps, slightly different widths/opacities —
+with the letter clearly visible underneath; the footer variant is pink),
+the joke being that it's Fun raising as
 much as Fund raising. Four teams compete for 3 weeks (15 July – 6 August;
 the final day counts into week 3) to raise money for the charity **Trees for
 Cities** (link to https://www.treesforcities.org so visitors understand the
@@ -148,16 +151,16 @@ README.md       — how the site works + admin instructions
     "distanceMultiplier": 1.0,
     "stepUpAppUrl": "https://thestepupapp.com/",
     "signupPledge": "£10",
-    "justGivingUrl": "",
+    "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
     "totalWalkers": 0,
     "showTopSteppers": false,
     "announcement": "All four teams are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each team has reached."
   },
   "teams": [
-    { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 0, "joinUrl": "" },
-    { "id": "bumblebees", "name": "The Bumblebees", "color": "#f0a800", "emoji": "🐝", "members": 0, "joinUrl": "" },
-    { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 0, "joinUrl": "" },
-    { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 0, "joinUrl": "" }
+    { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 0, "joinUrl": "https://join.thestepupapp.com/OqgHeh" },
+    { "id": "bumblebees", "name": "The Bumblebees", "color": "#f0a800", "emoji": "🐝", "members": 0, "joinUrl": "https://join.thestepupapp.com/ppCATZ" },
+    { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 0, "joinUrl": "https://join.thestepupapp.com/rFHdxg" },
+    { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 0, "joinUrl": "https://join.thestepupapp.com/Wfj4g4" }
   ],
   "weeklySteps": {
     "owls":       [0, 0, 0],
@@ -206,7 +209,8 @@ each with a 3px border in the team colour, linking to that team's
 to `settings.justGivingUrl`. While a URL is empty its button renders dimmed
 and unclickable ("The Owls — link coming soon" / "JustGiving — coming
 soon"). A second JustGiving button sits inside the fundraising gradient
-banner.
+banner. Links inside the call-out box (like "StepUp app") are cyan, bold
+and underlined so they stand out on the blue background.
 
 At the top of the main column, before the leaderboards, an **announcement
 panel**: a pale-blue gradient card titled "📣 Race Across the World — weekly
