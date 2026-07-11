@@ -93,6 +93,17 @@
       "linkLabel": "",
       "icon": "😊",
       "featured": false
+    },
+    {
+      "title": "The Grand Finale",
+      "date": "2026-08-06",
+      "time": "6pm",
+      "location": "RRA office",
+      "description": "Keep an eye out for details regarding the fundraising project's grand finale night. Get excited!",
+      "link": "",
+      "linkLabel": "",
+      "icon": "😍",
+      "featured": false
     }
   ]
 }
