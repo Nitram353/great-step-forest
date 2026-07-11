@@ -93,9 +93,9 @@ a:hover { text-decoration: underline; }
 .brand-name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   letter-spacing: 0.2px;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 .brand-sub {
   font-size: 0.72rem;
@@ -107,11 +107,21 @@ a:hover { text-decoration: underline; }
 /* The 'd' in "Fund" is struck through: this is Fun raising as much as Fund raising */
 .fun-d {
   position: relative;
-  text-decoration: line-through;
-  text-decoration-thickness: 0.14em;
-  text-decoration-color: var(--cyan);
+  display: inline-block;
 }
-.site-footer .fun-d { text-decoration-color: var(--pink); }
+.fun-d::after {
+  content: "";
+  position: absolute;
+  left: -18%;
+  right: -18%;
+  top: 52%;
+  height: 0.17em;
+  background: var(--cyan);
+  border-radius: 999px;
+  transform: rotate(-16deg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+.site-footer .fun-d::after { background: var(--pink); }
 
 .site-nav {
   display: flex;

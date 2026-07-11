@@ -102,10 +102,17 @@
       <div class="admin-card">
         <h2>👟 Weekly steps</h2>
         <p class="sub">Enter total steps recorded by each team, per week. Leave future weeks at 0.</p>
-        <div class="field" style="max-width:220px">
-          <label for="data-through-week">Results entered through week</label>
-          <select id="data-through-week"></select>
+        <div class="grid-2" style="max-width:560px">
+          <div class="field">
+            <label for="data-through-week">Results entered through week</label>
+            <select id="data-through-week"></select>
+          </div>
+          <div class="field">
+            <label for="set-distance-multiplier">Distance multiplier (map km per real km)</label>
+            <input type="number" min="0.1" step="0.1" id="set-distance-multiplier" />
+          </div>
         </div>
+        <p class="sub">The multiplier scales every kilometre shown on the site (leaderboards and the Race Across the World map). At 1.0 distances are real; raise it (e.g. 5) if teams need a boost to reach the later destinations.</p>
         <div id="steps-blocks"></div>
       </div>
 

@@ -77,6 +77,9 @@ function buildForms() {
   // top steppers visibility
   document.getElementById("set-show-top-steppers").checked = !!d.settings.showTopSteppers;
 
+  // distance multiplier
+  document.getElementById("set-distance-multiplier").value = Number(d.settings.distanceMultiplier) || 1;
+
   // data-through-week selector
   const sel = document.getElementById("data-through-week");
   sel.innerHTML = `<option value="0" ${d.settings.dataThroughWeek === 0 ? "selected" : ""}>Not started yet</option>`;
@@ -184,6 +187,7 @@ function collectForms() {
   d.settings.announcement = document.getElementById("set-announcement").value.trim();
   d.settings.totalWalkers = Number(document.getElementById("set-total-walkers").value) || 0;
   d.settings.showTopSteppers = document.getElementById("set-show-top-steppers").checked;
+  d.settings.distanceMultiplier = Number(document.getElementById("set-distance-multiplier").value) || 1;
 
   document.querySelectorAll("[data-members-team]").forEach((input) => {
     const team = d.teams.find((t) => t.id === input.dataset.membersTeam);

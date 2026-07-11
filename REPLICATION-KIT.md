@@ -144,6 +144,7 @@ README.md       — how the site works + admin instructions
     "totalWeeks": 3,
     "dataThroughWeek": 0,
     "stepLengthMeters": 0.75,
+    "distanceMultiplier": 1.0,
     "signupUrl": "https://worldwalking.com/",
     "signupPledge": "£10",
     "justGivingUrl": "",
@@ -257,7 +258,10 @@ Sidebar, in order:
 Nav label and headline: "Race Across the World", with the italic subheading
 "Each destination on the route is home to one of our interns." Convert each
 team's cumulative steps to km (× 0.75 / 1000) and plot progress along the
-route.
+route. Steps → km everywhere uses
+`steps × stepLengthMeters × distanceMultiplier / 1000` — the multiplier
+(default 1.0, admin-editable) lets small teams still reach the later
+destinations.
 
 Route waypoints `[name, lat, lng, legKmFromPrevious]` (~23,145 km total —
 each destination is an intern's home city):

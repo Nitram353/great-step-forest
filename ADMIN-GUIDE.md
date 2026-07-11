@@ -75,6 +75,12 @@ in the week-3 numbers.
 - **🔗 Sign-up & donation links** — the World Walking URL and the JustGiving
   URL. The matching home-page buttons show "coming soon" while a field is
   empty. (Event sign-up links are set per event in the Events section.)
+- **Distance multiplier** (in the Weekly steps card) — scales every km shown
+  on the site. Keep it at 1.0 for real distances; if the teams turn out to be
+  small and the Race Across the World map needs livening up, raise it (e.g.
+  5.0 makes every real km count as 5 km on the map) and publish. You can
+  change it at any point during the challenge — past weeks rescale too,
+  keeping the race fair.
 - **📌 Events** — add/edit/remove events. Tick **Featured** to give an event
   the big gradient card at the top of the sidebar (the 5k fun run and the
   Darts & raffle night are both featured now); the emoji box sets the big

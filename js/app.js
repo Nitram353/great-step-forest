@@ -18,7 +18,8 @@ const fmtGBP = (n) =>
   "£" + n.toLocaleString("en-GB", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
 function stepsToKm(steps) {
-  return (steps * DATA.settings.stepLengthMeters) / 1000;
+  const mult = Number(DATA.settings.distanceMultiplier) > 0 ? Number(DATA.settings.distanceMultiplier) : 1;
+  return (steps * DATA.settings.stepLengthMeters * mult) / 1000;
 }
 
 function teamTotalSteps(teamId) {
