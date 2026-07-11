@@ -57,7 +57,15 @@ function buildForms() {
   document.getElementById("gh-token").value = localStorage.getItem("gsf-token") || "";
 
   // links
-  document.getElementById("set-signup-url").value = d.settings.signupUrl || "";
+  document.getElementById("join-url-fields").innerHTML = d.teams
+    .map(
+      (t) => `<div class="field">
+        <label>Join ${esc(t.name)} on StepUp — link</label>
+        <input type="url" data-join-team="${t.id}" placeholder="https://…" value="${esc(t.joinUrl || "")}" />
+      </div>`
+    )
+    .join("");
+  document.getElementById("set-stepup-app-url").value = d.settings.stepUpAppUrl || "";
   document.getElementById("set-justgiving-url").value = d.settings.justGivingUrl || "";
 
   // weekly announcement
@@ -182,8 +190,13 @@ function collectForms() {
   const d = workingData;
 
   d.settings.dataThroughWeek = Number(document.getElementById("data-through-week").value);
-  d.settings.signupUrl = document.getElementById("set-signup-url").value.trim();
+  d.settings.stepUpAppUrl = document.getElementById("set-stepup-app-url").value.trim();
   d.settings.justGivingUrl = document.getElementById("set-justgiving-url").value.trim();
+
+  document.querySelectorAll("[data-join-team]").forEach((input) => {
+    const team = d.teams.find((t) => t.id === input.dataset.joinTeam);
+    if (team) team.joinUrl = input.value.trim();
+  });
   d.settings.announcement = document.getElementById("set-announcement").value.trim();
   d.settings.totalWalkers = Number(document.getElementById("set-total-walkers").value) || 0;
   d.settings.showTopSteppers = document.getElementById("set-show-top-steppers").checked;

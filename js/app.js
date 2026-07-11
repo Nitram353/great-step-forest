@@ -72,17 +72,18 @@ function wireCtaButtons() {
   const pledge = document.getElementById("signup-pledge");
   if (pledge && s.signupPledge) pledge.textContent = s.signupPledge;
 
-  const signup = document.getElementById("signup-btn");
-  if (signup) {
-    if (s.signupUrl) {
-      signup.href = s.signupUrl;
-      signup.classList.remove("btn-soon");
-      signup.textContent = "Download World Walking app and join your team →";
-    } else {
-      signup.removeAttribute("href");
-      signup.classList.add("btn-soon");
-      signup.textContent = "World Walking app — coming soon";
-    }
+  const appLink = document.getElementById("stepup-app-link");
+  if (appLink && s.stepUpAppUrl) appLink.href = s.stepUpAppUrl;
+
+  const joinWrap = document.getElementById("team-join-buttons");
+  if (joinWrap) {
+    joinWrap.innerHTML = DATA.teams
+      .map((t) =>
+        t.joinUrl
+          ? `<a class="btn btn-join" style="border-color:${t.color}" href="${esc(t.joinUrl)}" target="_blank" rel="noopener">${t.emoji} Join ${esc(t.name)} →</a>`
+          : `<span class="btn btn-join btn-soon" style="border-color:${t.color}">${t.emoji} ${esc(t.name)} — link coming soon</span>`
+      )
+      .join("");
   }
 
   [document.getElementById("donate-btn"), document.getElementById("donate-btn-2")].forEach((btn) => {

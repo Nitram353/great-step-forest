@@ -30,13 +30,14 @@ friendly form that rewrites that file for you. Nothing else ever changes.
 ## 3. How step tracking works (participants → teams)
 
 The website keeps score **per team per week**. Individual step counts live
-in the **World Walking** app — everyone joins the challenge there, picks
-their team, and their phone tracks their steps. Each week you read each
-team's total out of World Walking and type the four totals into the
-website's admin page.
+in the **StepUp** app — everyone downloads it and joins their team using
+that team's join link (each team has its own, shown as four buttons on the
+home page), and their phone tracks their steps. Each week you read each
+team's total out of StepUp and type the four totals into the website's
+admin page.
 
 (There is also a hidden **top 5 individuals** leaderboard — it's switched
-off because World Walking doesn't identify top steppers. If you find a way,
+off because we can't yet identify top steppers. If you find a way,
 tick "Show the Top steppers section on the site" in the admin and fill in
 the names.)
 
@@ -49,7 +50,7 @@ Say week 1 has just finished:
 
 1. Open the admin page and unlock it.
 2. **👟 Weekly steps** — for each of the four teams, type the team's week-1
-   total (from World Walking) into the **Wk 1** box. Leave future weeks at 0.
+   total (from StepUp) into the **Wk 1** box. Leave future weeks at 0.
 3. At the top of that card, set **"Results entered through week"** to
    **Week 1**. (This controls what the site shows — the leaderboards, the
    week-by-week table and the "Week 1 of 3" badge all follow it.)
@@ -72,9 +73,11 @@ in the week-3 numbers.
 
 ## 5. Other things you can change on the admin page
 
-- **🔗 Sign-up & donation links** — the World Walking URL and the JustGiving
-  URL. The matching home-page buttons show "coming soon" while a field is
-  empty. (Event sign-up links are set per event in the Events section.)
+- **🔗 Sign-up & donation links** — one StepUp join link per team (these
+  drive the four "Join …" buttons on the home page), the StepUp app download
+  URL, and the JustGiving URL. A team's button shows "coming soon" while its
+  field is empty. (Event sign-up links are set per event in the Events
+  section.)
 - **Distance multiplier** (in the Weekly steps card) — scales every km shown
   on the site. Keep it at 1.0 for real distances; if the teams turn out to be
   small and the Race Across the World map needs livening up, raise it (e.g.

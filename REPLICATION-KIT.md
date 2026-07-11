@@ -78,18 +78,19 @@ in "Fund" gets a cyan strikethrough (a `<span class="fun-d">d</span>` with
 much as Fund raising. Four teams compete for 3 weeks (15 July – 6 August;
 the final day counts into week 3) to raise money for the charity **Trees for
 Cities** (link to https://www.treesforcities.org so visitors understand the
-purpose). Participants join the challenge on the **World Walking** app and
-pick their team (that's where steps are tracked), and pledge £10 on a
-**JustGiving** page. Every donation must be tagged with name, team and event
-— a permanent warning note in the sidebar says so. Teams' weekly step counts
-convert to distance (0.75 m per step) and race along a world route (see
-3.6); an admin-written weekly announcement on the home page reports which
-destination each team has reached. Both the World Walking and JustGiving
-URLs are configurable in settings; their buttons show "coming soon" while
-empty. The top-5 individual steppers leaderboard exists but ships hidden
-(`settings.showTopSteppers: false`) because World Walking can't identify
-top steppers. The public site is read-only; one admin updates everything
-through a hidden admin page.
+purpose). Participants download the **StepUp** app and join their team via
+that team's own join link — the home page shows four "Join …" buttons, one
+per team (`teams[].joinUrl`) — and pledge £10 on a **JustGiving** page.
+Every donation must be tagged with name, team and event — a permanent
+warning note in the sidebar says so. Teams' weekly step counts convert to
+distance (0.75 m per step) and race along a world route (see 3.6); an
+admin-written weekly announcement on the home page reports which destination
+each team has reached. The per-team join links, the StepUp app URL
+(`settings.stepUpAppUrl`) and the JustGiving URL are all configurable;
+buttons show "coming soon" while their URL is empty. The top-5 individual
+steppers leaderboard exists but ships hidden
+(`settings.showTopSteppers: false`). The public site is read-only; one
+admin updates everything through a hidden admin page.
 
 ### 3.2 Files
 
@@ -145,7 +146,7 @@ README.md       — how the site works + admin instructions
     "dataThroughWeek": 0,
     "stepLengthMeters": 0.75,
     "distanceMultiplier": 1.0,
-    "signupUrl": "https://worldwalking.com/",
+    "stepUpAppUrl": "https://thestepupapp.com/",
     "signupPledge": "£10",
     "justGivingUrl": "",
     "totalWalkers": 0,
@@ -153,10 +154,10 @@ README.md       — how the site works + admin instructions
     "announcement": "All four teams are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each team has reached."
   },
   "teams": [
-    { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 0 },
-    { "id": "bumblebees", "name": "The Bumblebees", "color": "#f0a800", "emoji": "🐝", "members": 0 },
-    { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 0 },
-    { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 0 }
+    { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 0, "joinUrl": "" },
+    { "id": "bumblebees", "name": "The Bumblebees", "color": "#f0a800", "emoji": "🐝", "members": 0, "joinUrl": "" },
+    { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 0, "joinUrl": "" },
+    { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 0, "joinUrl": "" }
   ],
   "weeklySteps": {
     "owls":       [0, 0, 0],
@@ -196,15 +197,16 @@ Escape all user-editable strings before inserting into HTML.
 
 Hero extras (below the lede): a translucent call-out box — "**Want in?** To
 join the step challenge, take these two steps:" followed by a numbered list:
-"1) sign up to the challenge on **World Walking** app and choose your team —
-that's where your steps are tracked" and "2) pledge **£10** to Trees for
-Cities on our **JustGiving** page" — then two pill buttons: a white
-"Download World Walking app and join your team" linking to
-`settings.signupUrl`, and an outlined "Donate on JustGiving" linking to
-`settings.justGivingUrl`. While either URL is empty its button renders
-dimmed and unclickable ("World Walking app — coming soon" / "JustGiving —
-coming soon"). A second JustGiving button sits inside the fundraising
-gradient banner.
+"1) download the **StepUp** app (linked to `settings.stepUpAppUrl`) and join
+your team using its button below — that's where your steps are tracked" and
+"2) pledge **£10** to Trees for Cities on our **JustGiving** page" — then a
+row of four white pill buttons, one per team ("🦉 Join The Owls →" etc.,
+each with a 3px border in the team colour, linking to that team's
+`joinUrl`), and below them an outlined "Donate on JustGiving" button linking
+to `settings.justGivingUrl`. While a URL is empty its button renders dimmed
+and unclickable ("The Owls — link coming soon" / "JustGiving — coming
+soon"). A second JustGiving button sits inside the fundraising gradient
+banner.
 
 At the top of the main column, before the leaderboards, an **announcement
 panel**: a pale-blue gradient card titled "📣 Race Across the World — weekly
@@ -300,8 +302,9 @@ Page contents:
 - **Publishing setup card**: two fields — repository `owner/name` and GitHub
   token — remembered in localStorage only. Explain in the page copy that the
   token stays in the browser.
-- **Links card**: fields for `settings.signupUrl` (the World Walking URL)
-  and `settings.justGivingUrl` so the admin can set both without code.
+- **Links card**: one StepUp join-link field per team (`teams[].joinUrl`),
+  plus `settings.stepUpAppUrl` and `settings.justGivingUrl` — all editable
+  without code.
 - **Announcement card**: a textarea for `settings.announcement` (the weekly
   Race Across the World update on the home page).
 - **Walkers card**: one input per team for `teams[].members`, plus a
@@ -344,9 +347,9 @@ Page contents:
 ## Part 4 — Success checklist
 
 - [ ] `https://<your-username>.github.io/<repo-name>/` loads with the blue
-      hero, the strikethrough "d" in the site name, the two-step World
-      Walking/JustGiving call-out with its buttons, the 📣 announcement
-      panel, and four stat cards (all zeros pre-launch).
+      hero, the strikethrough "d" in the site name, the two-step
+      StepUp/JustGiving call-out with the four team join buttons, the 📣
+      announcement panel, and four stat cards (all zeros pre-launch).
 - [ ] "Race Across the World" shows a map with a dashed route from London
       to Mexico City and 4 team markers at London.
 - [ ] The sidebar features the 3km fun run, shows the amber donation-tagging

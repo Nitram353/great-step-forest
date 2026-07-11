@@ -211,6 +211,12 @@ a:hover { text-decoration: underline; }
 }
 .hero-cta .btn { margin-top: 0; }
 
+.btn-join {
+  border: 3px solid transparent;
+  padding: 8px 18px;
+  font-size: 0.88rem;
+}
+
 .btn-outline {
   background: transparent;
   color: #fff;
