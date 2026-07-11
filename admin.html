@@ -70,13 +70,32 @@
         <p class="sub">The buttons on the home page point to these. Leave a field empty until the page exists — its button will show "coming soon" until then. (Event sign-up links are set per event in the Events section below.)</p>
         <div class="grid-2">
           <div class="field">
-            <label for="set-signup-url">Stridekick challenge URL (step challenge sign-up)</label>
-            <input type="url" id="set-signup-url" placeholder="https://link.stridekick.com/…" />
+            <label for="set-signup-url">World Walking URL (step challenge sign-up)</label>
+            <input type="url" id="set-signup-url" placeholder="https://worldwalking.org/…" />
           </div>
           <div class="field">
-            <label for="set-gofundme-url">GoFundMe page URL</label>
-            <input type="url" id="set-gofundme-url" placeholder="https://www.gofundme.com/…" />
+            <label for="set-justgiving-url">JustGiving page URL (donations)</label>
+            <input type="url" id="set-justgiving-url" placeholder="https://www.justgiving.com/…" />
           </div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <h2>📣 Weekly announcement</h2>
+        <p class="sub">Shown in the "Race Across the World — weekly update" panel at the top of the home page. Update it each week to say which destination each team has reached. Leave empty to hide the panel.</p>
+        <div class="field">
+          <label for="set-announcement">Announcement text</label>
+          <textarea id="set-announcement" rows="3"></textarea>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <h2>🚶 Walkers</h2>
+        <p class="sub">Number of colleagues walking in each team. The "colleagues walking" tile on the home page adds these up — or type a manual total below to override the sum.</p>
+        <div class="grid-2" id="walker-fields"></div>
+        <div class="field" style="max-width:300px">
+          <label for="set-total-walkers">Total colleagues walking (0 = add up the teams)</label>
+          <input type="number" min="0" step="1" id="set-total-walkers" />
         </div>
       </div>
 
@@ -98,7 +117,11 @@
 
       <div class="admin-card">
         <h2>⭐ Top individual steppers</h2>
-        <p class="sub">The top 5 shown on the leaderboard (cumulative steps). First name + initial is plenty.</p>
+        <p class="sub">The top 5 shown on the leaderboard (cumulative steps). First name + initial is plenty. This section is currently hidden on the site — tick the box to show it if you find a way to identify top steppers.</p>
+        <div class="checkbox-row">
+          <input type="checkbox" id="set-show-top-steppers" />
+          <label for="set-show-top-steppers">Show the Top steppers section on the site</label>
+        </div>
         <div id="individual-rows"></div>
         <button class="btn-add" id="add-individual">+ Add person</button>
       </div>

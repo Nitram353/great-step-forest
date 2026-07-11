@@ -1,34 +1,16 @@
 /* The Journey — cumulative team distance plotted along a route from London */
 
-// Route waypoints: [name, lat, lng, legKm] — legKm is walking distance from previous point
+// Race Across the World: each destination is home to one of our interns.
+// Route waypoints: [name, lat, lng, legKm] — legKm is the distance from the previous stop
 const ROUTE = [
   ["London", 51.5074, -0.1278, 0],
-  ["Rochester", 51.3886, 0.5041, 55],
-  ["Canterbury", 51.2802, 1.0789, 45],
-  ["Dover", 51.1279, 1.3134, 30],
-  ["Calais", 50.9513, 1.8587, 45], // channel crossing — we let the teams 'walk on water'
-  ["Amiens", 49.8942, 2.2957, 130],
-  ["Paris", 48.8566, 2.3522, 150],
-  ["Auxerre", 47.7982, 3.5730, 185],
-  ["Dijon", 47.3220, 5.0415, 150],
-  ["Geneva", 46.2044, 6.1432, 200],
-  ["Chamonix", 45.9237, 6.8694, 85],
-  ["Aosta", 45.7372, 7.3206, 65],
-  ["Milan", 45.4642, 9.1900, 185],
-  ["Bologna", 44.4949, 11.3426, 215],
-  ["Florence", 43.7696, 11.2558, 105],
-  ["Siena", 43.3188, 11.3308, 75],
-  ["Rome", 41.9028, 12.4964, 215],
-  ["Naples", 40.8518, 14.2681, 230],
-  ["Bari", 41.1171, 16.8719, 265],
-  ["Igoumenitsa", 39.5060, 20.2658, 330], // Adriatic crossing
-  ["Ioannina", 39.6650, 20.8537, 80],
-  ["Meteora", 39.7217, 21.6306, 105],
-  ["Delphi", 38.4824, 22.5010, 175],
-  ["Athens", 37.9838, 23.7275, 180],
-  ["Thessaloniki", 40.6401, 22.9444, 500],
-  ["Alexandroupoli", 40.8457, 25.8740, 345],
-  ["Istanbul", 41.0082, 28.9784, 300],
+  ["Paris", 48.8566, 2.3522, 345],
+  ["Warsaw", 52.2297, 21.0122, 1370],
+  ["Kyiv", 50.4501, 30.5234, 690],
+  ["Istanbul", 41.0082, 28.9784, 1060],
+  ["New Delhi", 28.6139, 77.209, 4560],
+  ["New York", 40.7128, -74.006, 11760],
+  ["Mexico City", 19.4326, -99.1332, 3360],
 ];
 
 // cumulative km at each waypoint

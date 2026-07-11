@@ -24,7 +24,7 @@
       </a>
       <nav class="site-nav">
         <a href="index.html" class="active">Leaderboards</a>
-        <a href="journey.html">The Journey</a>
+        <a href="journey.html">Race Across the World</a>
       </nav>
     </div>
   </header>
@@ -39,14 +39,16 @@
         the charity planting urban trees and greening cities across the UK and beyond.
         The team that travels the furthest wins. The trees win either way.
       </p>
-      <p class="lede join-note">
-        <strong>Want in?</strong> To join the step challenge, sign up to the company
-        challenge on <strong>Stridekick</strong> — that's where your steps are tracked —
-        and pledge <strong id="signup-pledge">£10</strong> to Trees for Cities.
-      </p>
+      <div class="lede join-note">
+        <strong>Want in?</strong> To join the step challenge, take these two steps:
+        <ol class="join-steps">
+          <li>sign up to the challenge on <strong>World Walking</strong> app and choose your team — that's where your steps are tracked</li>
+          <li>pledge <strong id="signup-pledge">£10</strong> to Trees for Cities on our <strong>JustGiving</strong> page</li>
+        </ol>
+      </div>
       <div class="hero-cta">
-        <a class="btn" id="signup-btn" href="#" target="_blank" rel="noopener">Join on Stridekick →</a>
-        <a class="btn btn-outline" id="gofundme-btn" href="#" target="_blank" rel="noopener">Donate on GoFundMe</a>
+        <a class="btn" id="signup-btn" href="#" target="_blank" rel="noopener">Download World Walking app and join your team</a>
+        <a class="btn btn-outline" id="donate-btn" href="#" target="_blank" rel="noopener">Donate on JustGiving</a>
       </div>
     </div>
   </section>
@@ -61,6 +63,15 @@
 
     <div class="page-grid">
       <div class="main-col">
+
+        <section class="section" id="announce-section">
+          <div class="announce-card">
+            <div class="announce-head">📣 Race Across the World — weekly update</div>
+            <div class="announce-sub">Each destination on the route is home to one of our interns.</div>
+            <p id="announce-text"></p>
+            <a href="journey.html">See the race map →</a>
+          </div>
+        </section>
 
         <section class="section" id="team-leaderboard-section">
           <div class="section-head">
@@ -80,7 +91,7 @@
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="top-steppers-section">
           <div class="section-head">
             <h2>⭐ Top steppers</h2>
             <span class="hint">Top 5 individuals, all teams</span>
@@ -99,7 +110,7 @@
               <div class="amount" id="fund-grand-total">—</div>
             </div>
             <div class="trees" id="fund-trees-note"></div>
-            <a class="btn" id="gofundme-btn-2" href="#" target="_blank" rel="noopener">Donate on GoFundMe</a>
+            <a class="btn" id="donate-btn-2" href="#" target="_blank" rel="noopener">Donate on JustGiving</a>
           </div>
           <div class="board" id="fund-board"></div>
         </section>
@@ -109,6 +120,11 @@
       <aside class="sidebar">
         <div id="featured-event"></div>
 
+        <div class="side-note">
+          ⚠️ <strong>Important:</strong> you must tag every donation with your
+          <strong>name</strong>, <strong>team</strong> and <strong>event</strong>.
+        </div>
+
         <div class="side-card">
           <h3>📌 Upcoming events</h3>
           <div id="event-list"></div>
@@ -117,10 +133,12 @@
         <div class="side-card charity-card">
           <h3>🌱 Why we're walking</h3>
           <p>
-            <strong>Trees for Cities</strong> is the only UK charity working at a national and international
-            scale to improve lives by planting trees in cities — creating greener, healthier
-            neighbourhoods where they're needed most. Every pound our teams raise helps plant
-            and care for urban trees.
+            <strong>Trees for Cities</strong> is a London-founded charity transforming urban areas
+            through tree planting, greener spaces and stronger connections with nature. Its work
+            improves air quality, supports wildlife, tackles climate change and boosts wellbeing.
+            Through volunteering, fundraising and planting events, businesses and communities can
+            make a visible difference. So far, the charity has planted more than two million trees
+            across the UK and internationally.
           </p>
           <a class="btn-charity" href="https://www.treesforcities.org" target="_blank" rel="noopener">Visit treesforcities.org →</a>
         </div>

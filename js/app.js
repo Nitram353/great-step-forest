@@ -75,25 +75,38 @@ function wireCtaButtons() {
   if (signup) {
     if (s.signupUrl) {
       signup.href = s.signupUrl;
-      signup.textContent = `Join on Stridekick & pledge ${s.signupPledge || "£10"} →`;
+      signup.classList.remove("btn-soon");
+      signup.textContent = "Download World Walking app and join your team →";
     } else {
       signup.removeAttribute("href");
       signup.classList.add("btn-soon");
-      signup.textContent = "Stridekick sign-up — coming soon";
+      signup.textContent = "World Walking app — coming soon";
     }
   }
 
-  [document.getElementById("gofundme-btn"), document.getElementById("gofundme-btn-2")].forEach((btn) => {
+  [document.getElementById("donate-btn"), document.getElementById("donate-btn-2")].forEach((btn) => {
     if (!btn) return;
-    if (s.goFundMeUrl) {
-      btn.href = s.goFundMeUrl;
-      btn.textContent = "Donate on GoFundMe →";
+    if (s.justGivingUrl) {
+      btn.href = s.justGivingUrl;
+      btn.classList.remove("btn-soon");
+      btn.textContent = "Donate on JustGiving →";
     } else {
       btn.removeAttribute("href");
       btn.classList.add("btn-soon");
-      btn.textContent = "GoFundMe — coming soon";
+      btn.textContent = "JustGiving — coming soon";
     }
   });
+}
+
+function renderAnnouncement() {
+  const section = document.getElementById("announce-section");
+  if (!section) return;
+  const text = (DATA.settings.announcement || "").trim();
+  if (!text) {
+    section.style.display = "none";
+    return;
+  }
+  document.getElementById("announce-text").textContent = text;
 }
 
 function renderDashboard() {
@@ -114,15 +127,25 @@ function renderDashboard() {
   const totalSteps = ranked.reduce((a, t) => a + t.steps, 0);
   const totalKm = stepsToKm(totalSteps);
   const totalMoney = DATA.teams.reduce((a, t) => a + (Number(DATA.funds[t.id]) || 0), 0);
-  const totalWalkers = DATA.teams.reduce((a, t) => a + (Number(t.members) || 0), 0);
+  // Manual total takes precedence; otherwise sum the per-team walker counts
+  const memberSum = DATA.teams.reduce((a, t) => a + (Number(t.members) || 0), 0);
+  const totalWalkers = Number(s.totalWalkers) > 0 ? Number(s.totalWalkers) : memberSum;
   setText("stat-steps", fmt(totalSteps));
   setText("stat-km", fmt(totalKm) + " km");
   setText("stat-money", fmtGBP(totalMoney));
   setText("stat-walkers", String(totalWalkers));
 
+  renderAnnouncement();
   renderTeamBoard(ranked);
   renderWeekTable();
-  renderIndividualBoard();
+
+  const topSection = document.getElementById("top-steppers-section");
+  if (topSection && !DATA.settings.showTopSteppers) {
+    topSection.style.display = "none";
+  } else {
+    renderIndividualBoard();
+  }
+
   renderFundBoard(totalMoney);
   renderEvents();
 }
@@ -143,7 +166,7 @@ function renderTeamBoard(ranked) {
         <div class="rank">${i + 1}</div>
         <div class="who">
           <div class="name"><span class="team-chip" style="background:${t.color}"></span>${t.emoji} ${esc(t.name)} ${i === 0 ? '<span class="crown">👑</span>' : ""}</div>
-          <div class="meta">${t.members} walkers · ${fmt(t.km)} km travelled</div>
+          <div class="meta">${t.members ? t.members + " walkers · " : ""}${fmt(t.km)} km travelled</div>
         </div>
         <div class="figures">
           <div class="big">${fmt(t.steps)}</div>

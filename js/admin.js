@@ -58,7 +58,24 @@ function buildForms() {
 
   // links
   document.getElementById("set-signup-url").value = d.settings.signupUrl || "";
-  document.getElementById("set-gofundme-url").value = d.settings.goFundMeUrl || "";
+  document.getElementById("set-justgiving-url").value = d.settings.justGivingUrl || "";
+
+  // weekly announcement
+  document.getElementById("set-announcement").value = d.settings.announcement || "";
+
+  // walkers
+  document.getElementById("walker-fields").innerHTML = d.teams
+    .map(
+      (t) => `<div class="field">
+        <label>${esc(t.name)} walkers</label>
+        <input type="number" min="0" step="1" data-members-team="${t.id}" value="${Number(t.members) || 0}" />
+      </div>`
+    )
+    .join("");
+  document.getElementById("set-total-walkers").value = Number(d.settings.totalWalkers) || 0;
+
+  // top steppers visibility
+  document.getElementById("set-show-top-steppers").checked = !!d.settings.showTopSteppers;
 
   // data-through-week selector
   const sel = document.getElementById("data-through-week");
@@ -163,7 +180,15 @@ function collectForms() {
 
   d.settings.dataThroughWeek = Number(document.getElementById("data-through-week").value);
   d.settings.signupUrl = document.getElementById("set-signup-url").value.trim();
-  d.settings.goFundMeUrl = document.getElementById("set-gofundme-url").value.trim();
+  d.settings.justGivingUrl = document.getElementById("set-justgiving-url").value.trim();
+  d.settings.announcement = document.getElementById("set-announcement").value.trim();
+  d.settings.totalWalkers = Number(document.getElementById("set-total-walkers").value) || 0;
+  d.settings.showTopSteppers = document.getElementById("set-show-top-steppers").checked;
+
+  document.querySelectorAll("[data-members-team]").forEach((input) => {
+    const team = d.teams.find((t) => t.id === input.dataset.membersTeam);
+    if (team) team.members = Number(input.value) || 0;
+  });
 
   document.querySelectorAll("[data-steps-team]").forEach((input) => {
     const team = input.dataset.stepsTeam;

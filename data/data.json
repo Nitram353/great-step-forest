@@ -10,7 +10,10 @@
     "stepLengthMeters": 0.75,
     "signupUrl": "https://worldwalking.com/",
     "signupPledge": "£10",
-    "goFundMeUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL"
+    "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
+    "totalWalkers": 0,
+    "showTopSteppers": false,
+    "announcement": "All four teams are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each team has reached."
   },
   "teams": [
     {
@@ -18,51 +21,35 @@
       "name": "The Owls",
       "color": "#0f8a3d",
       "emoji": "🦉",
-      "members": 24
+      "members": 0
     },
     {
       "id": "bumblebees",
       "name": "The Bumblebees",
       "color": "#f0a800",
       "emoji": "🐝",
-      "members": 19
+      "members": 0
     },
     {
       "id": "collies",
       "name": "The Border Collies",
       "color": "#d92632",
       "emoji": "🐕",
-      "members": 28
+      "members": 0
     },
     {
       "id": "dolphins",
       "name": "The Dolphins",
       "color": "#2d53ed",
       "emoji": "🐬",
-      "members": 17
+      "members": 0
     }
   ],
   "weeklySteps": {
-    "owls": [
-      0,
-      0,
-      0
-    ],
-    "bumblebees": [
-      0,
-      0,
-      0
-    ],
-    "collies": [
-      0,
-      0,
-      0
-    ],
-    "dolphins": [
-      0,
-      0,
-      0
-    ]
+    "owls": [0, 0, 0],
+    "bumblebees": [0, 0, 0],
+    "collies": [0, 0, 0],
+    "dolphins": [0, 0, 0]
   },
   "funds": {
     "owls": 0,

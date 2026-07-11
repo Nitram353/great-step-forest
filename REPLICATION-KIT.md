@@ -78,12 +78,17 @@ in "Fund" gets a cyan strikethrough (a `<span class="fun-d">d</span>` with
 much as Fund raising. Four teams compete for 3 weeks (15 July – 6 August;
 the final day counts into week 3) to raise money for the charity **Trees for
 Cities** (link to https://www.treesforcities.org so visitors understand the
-purpose). Participants join the company challenge on **Stridekick** (which
-tracks their steps) and pledge £10. Teams' weekly step counts convert to
-distance (0.75 m per step); the team that "travels" the furthest from London
-wins. Donations are collected on a GoFundMe page. Both the Stridekick and
-GoFundMe URLs are configurable in settings; their buttons show "coming soon"
-while empty. The public site is read-only; one admin updates the numbers
+purpose). Participants join the challenge on the **World Walking** app and
+pick their team (that's where steps are tracked), and pledge £10 on a
+**JustGiving** page. Every donation must be tagged with name, team and event
+— a permanent warning note in the sidebar says so. Teams' weekly step counts
+convert to distance (0.75 m per step) and race along a world route (see
+3.6); an admin-written weekly announcement on the home page reports which
+destination each team has reached. Both the World Walking and JustGiving
+URLs are configurable in settings; their buttons show "coming soon" while
+empty. The top-5 individual steppers leaderboard exists but ships hidden
+(`settings.showTopSteppers: false`) because World Walking can't identify
+top steppers. The public site is read-only; one admin updates everything
 through a hidden admin page.
 
 ### 3.2 Files
@@ -139,15 +144,18 @@ README.md       — how the site works + admin instructions
     "totalWeeks": 3,
     "dataThroughWeek": 0,
     "stepLengthMeters": 0.75,
-    "signupUrl": "",
+    "signupUrl": "https://worldwalking.com/",
     "signupPledge": "£10",
-    "goFundMeUrl": ""
+    "justGivingUrl": "",
+    "totalWalkers": 0,
+    "showTopSteppers": false,
+    "announcement": "All four teams are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each team has reached."
   },
   "teams": [
-    { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 24 },
-    { "id": "bumblebees", "name": "The Bumblebees", "color": "#f0a800", "emoji": "🐝", "members": 19 },
-    { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 28 },
-    { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 17 }
+    { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 0 },
+    { "id": "bumblebees", "name": "The Bumblebees", "color": "#f0a800", "emoji": "🐝", "members": 0 },
+    { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 0 },
+    { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 0 }
   ],
   "weeklySteps": {
     "owls":       [0, 0, 0],
@@ -158,20 +166,18 @@ README.md       — how the site works + admin instructions
   "funds": { "owls": 0, "bumblebees": 0, "collies": 0, "dolphins": 0 },
   "topIndividuals": [],
   "events": [
-    { "title": "5k fun run", "date": "2026-08-05", "time": "6pm",
+    { "title": "3km fun run", "date": "2026-08-05", "time": "6pm",
       "location": "starting at RRA office",
-      "description": "Join the office fun run around St James Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!",
-      "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
-      "linkLabel": "Sign up & pledge your £5", "featured": true, "icon": "🏃" },
-    { "title": "Darts and raffle night", "date": "2026-08-06", "time": "6pm",
+      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!(Deadline to sign up: 17th of July)",
+      "link": "", "linkLabel": "Sign up & pledge your £5", "icon": "", "featured": true },
+    { "title": "Sip & Paint", "date": "2026-07-21", "time": "4pm",
+      "location": "RRA office (2nd floor kitchen)",
+      "description": "Show off your artistic skills and paint a portrait of a colleague! We provide all the materials. Voting for the best portrait begins on 22 July. Win valuable points for your rally team!",
+      "link": "", "linkLabel": "", "icon": "😊", "featured": false },
+    { "title": "The Grand Finale", "date": "2026-08-06", "time": "6pm",
       "location": "RRA office",
-      "description": "Everyone has a chance to win prizes at the office Darts and Raffle night. The cheapest night out in Mayfair at a cost of £5!",
-      "link": "https://docs.google.com/spreadsheets/d/1p-Qc-uqqgLAZV45W071aoEAzlJ2OGKbaGB0tLdZ6gW0/edit?usp=sharing",
-      "linkLabel": "Sign up & pledge your £5", "featured": true, "icon": "🎯" },
-    { "title": "Grand Finale & Awards Evening", "date": "2026-08-13", "time": "5:30pm",
-      "location": "The Boardroom",
-      "description": "The winning team is crowned! Final leaderboards revealed, prizes for top steppers, and the grand fundraising total presented to Trees for Cities.",
-      "link": "", "linkLabel": "", "featured": false }
+      "description": "Keep an eye out for details regarding the fundraising project's grand finale night. Get excited!",
+      "link": "", "linkLabel": "", "icon": "😍", "featured": false }
   ]
 }
 ```
@@ -188,14 +194,23 @@ Escape all user-editable strings before inserting into HTML.
 ### 3.5 Dashboard (`index.html`)
 
 Hero extras (below the lede): a translucent call-out box — "**Want in?** To
-join the step challenge, sign up to the company challenge on **Stridekick**
-— that's where your steps are tracked — and pledge **£10** to Trees for
-Cities." — followed by two pill buttons: a white "Join on Stridekick &
-pledge £10 →" linking to `settings.signupUrl`, and an outlined "Donate on
-GoFundMe" linking to `settings.goFundMeUrl`. While either URL is empty its
-button renders dimmed and unclickable ("Stridekick sign-up — coming soon" /
-"GoFundMe — coming soon"). A second GoFundMe button sits inside the
-fundraising gradient banner.
+join the step challenge, take these two steps:" followed by a numbered list:
+"1) sign up to the challenge on **World Walking** app and choose your team —
+that's where your steps are tracked" and "2) pledge **£10** to Trees for
+Cities on our **JustGiving** page" — then two pill buttons: a white
+"Download World Walking app and join your team" linking to
+`settings.signupUrl`, and an outlined "Donate on JustGiving" linking to
+`settings.justGivingUrl`. While either URL is empty its button renders
+dimmed and unclickable ("World Walking app — coming soon" / "JustGiving —
+coming soon"). A second JustGiving button sits inside the fundraising
+gradient banner.
+
+At the top of the main column, before the leaderboards, an **announcement
+panel**: a pale-blue gradient card titled "📣 Race Across the World — weekly
+update" with the italic subline "Each destination on the route is home to
+one of our interns.", the admin-written `settings.announcement` text, and a
+"See the race map →" link to journey.html. Hidden when the announcement is
+empty.
 
 Two-column layout (main column + 330px sticky sidebar; single column on
 mobile). Main column, in order:
@@ -209,6 +224,8 @@ mobile). Main column, in order:
    one column per week up to `dataThroughWeek`, plus a bold cobalt total.
 3. **⭐ Top steppers** — same row style as the team board for the top 5
    individuals (🥇🥈🥉 on the first three), with their team chip and name.
+   The whole section is hidden when `settings.showTopSteppers` is false
+   (the default).
 4. **💚 Fundraising leaderboard** — a teal→blue gradient banner card showing
    the grand total (sum of team funds) plus "That's enough to plant roughly
    N urban trees 🌳" (total ÷ £6, rounded down), then a leaderboard of teams
@@ -220,29 +237,35 @@ Sidebar, in order:
    emoji (the event's `icon` field) in the corner, a cyan "FEATURED EVENT"
    pill, date/time/location line, description, and a white pill button using
    `linkLabel` → `link` (new tab).
-2. **📌 Upcoming events** — the remaining events sorted by date: uppercase
+2. **Warning note** — an always-visible amber card: "⚠️ **Important:** you
+   must tag every donation with your **name**, **team** and **event**."
+3. **📌 Upcoming events** — the remaining events sorted by date: uppercase
    bright-blue date line, bold title, location, small description, optional
    link.
-3. **🌱 Why we're walking** — teal-accented card explaining Trees for Cities,
-   with a teal pill button "Visit treesforcities.org →".
+4. **🌱 Why we're walking** — teal-accented card with this exact text and a
+   teal pill button "Visit treesforcities.org →": "Trees for Cities is a
+   London-founded charity transforming urban areas through tree planting,
+   greener spaces and stronger connections with nature. Its work improves
+   air quality, supports wildlife, tackles climate change and boosts
+   wellbeing. Through volunteering, fundraising and planting events,
+   businesses and communities can make a visible difference. So far, the
+   charity has planted more than two million trees across the UK and
+   internationally."
 
-### 3.6 Journey page (`journey.html`)
+### 3.6 Race Across the World page (`journey.html`)
 
-Headline "The long walk out of London". Convert each team's cumulative steps
-to km (× 0.75 / 1000) and plot progress along a fixed walking route.
+Nav label and headline: "Race Across the World", with the italic subheading
+"Each destination on the route is home to one of our interns." Convert each
+team's cumulative steps to km (× 0.75 / 1000) and plot progress along the
+route.
 
-Route waypoints `[name, lat, lng, legKmFromPrevious]` (~4,245 km total):
+Route waypoints `[name, lat, lng, legKmFromPrevious]` (~23,145 km total —
+each destination is an intern's home city):
 
 ```
-London 51.5074,-0.1278,0 · Rochester 51.3886,0.5041,55 · Canterbury 51.2802,1.0789,45 ·
-Dover 51.1279,1.3134,30 · Calais 50.9513,1.8587,45 · Amiens 49.8942,2.2957,130 ·
-Paris 48.8566,2.3522,150 · Auxerre 47.7982,3.5730,185 · Dijon 47.3220,5.0415,150 ·
-Geneva 46.2044,6.1432,200 · Chamonix 45.9237,6.8694,85 · Aosta 45.7372,7.3206,65 ·
-Milan 45.4642,9.1900,185 · Bologna 44.4949,11.3426,215 · Florence 43.7696,11.2558,105 ·
-Siena 43.3188,11.3308,75 · Rome 41.9028,12.4964,215 · Naples 40.8518,14.2681,230 ·
-Bari 41.1171,16.8719,265 · Igoumenitsa 39.5060,20.2658,330 · Ioannina 39.6650,20.8537,80 ·
-Meteora 39.7217,21.6306,105 · Delphi 38.4824,22.5010,175 · Athens 37.9838,23.7275,180 ·
-Thessaloniki 40.6401,22.9444,500 · Alexandroupoli 40.8457,25.8740,345 · Istanbul 41.0082,28.9784,300
+London 51.5074,-0.1278,0 · Paris 48.8566,2.3522,345 · Warsaw 52.2297,21.0122,1370 ·
+Kyiv 50.4501,30.5234,690 · Istanbul 41.0082,28.9784,1060 · New Delhi 28.6139,77.2090,4560 ·
+New York 40.7128,-74.0060,11760 · Mexico City 19.4326,-99.1332,3360
 ```
 
 Page contents:
@@ -273,8 +296,14 @@ Page contents:
 - **Publishing setup card**: two fields — repository `owner/name` and GitHub
   token — remembered in localStorage only. Explain in the page copy that the
   token stays in the browser.
-- **Links card**: fields for `settings.signupUrl` (the Stridekick challenge
-  URL) and `settings.goFundMeUrl` so the admin can set both without code.
+- **Links card**: fields for `settings.signupUrl` (the World Walking URL)
+  and `settings.justGivingUrl` so the admin can set both without code.
+- **Announcement card**: a textarea for `settings.announcement` (the weekly
+  Race Across the World update on the home page).
+- **Walkers card**: one input per team for `teams[].members`, plus a
+  `settings.totalWalkers` manual-total override (0 = sum the teams).
+- **Top steppers card**: includes a checkbox bound to
+  `settings.showTopSteppers` that shows/hides the section on the site.
 - **Form cards** generated from data.json: "results through week" selector
   (including a week-0 "Not started yet" option); per-team blocks (left
   border in team colour) with one step input per week (`totalWeeks`, so 3);
@@ -292,10 +321,10 @@ Page contents:
 ### 3.8 Publish & verify (Claude: do this too)
 
 1. Serve the folder locally and verify: hero pill says "Starts 15 July",
-   both featured event cards render with their sign-up buttons, the
-   Stridekick and GoFundMe buttons show "coming soon", the map renders with
-   4 markers at London, and the admin unlocks with `trees2026` and builds
-   12 step inputs (4 teams × 3 weeks).
+   the announcement panel and donation-tagging note render, the JustGiving
+   button shows "coming soon" while its URL is empty, the map renders with
+   4 markers at London, the Top steppers section is hidden, and the admin
+   unlocks with `trees2026` and builds 12 step inputs (4 teams × 3 weeks).
 2. `git init`, commit everything, push to the user's repo
    (`https://x-access-token:<TOKEN>@github.com/<user>/<repo>.git`), then
    reset the remote URL so the token isn't stored in git config.
@@ -311,13 +340,13 @@ Page contents:
 ## Part 4 — Success checklist
 
 - [ ] `https://<your-username>.github.io/<repo-name>/` loads with the blue
-      hero, the strikethrough "d" in the site name, the £10 Stridekick
-      call-out with its buttons, and four stat cards (all zeros pre-launch).
-- [ ] "The Journey" shows a map with a dashed route from London to Istanbul
-      and 4 team markers at London.
-- [ ] The sidebar features the 5k fun run and the Darts and raffle night,
-      each with a "Sign up & pledge your £5" button, and the Trees for
-      Cities link works.
+      hero, the strikethrough "d" in the site name, the two-step World
+      Walking/JustGiving call-out with its buttons, the 📣 announcement
+      panel, and four stat cards (all zeros pre-launch).
+- [ ] "Race Across the World" shows a map with a dashed route from London
+      to Mexico City and 4 team markers at London.
+- [ ] The sidebar features the 3km fun run, shows the amber donation-tagging
+      note, lists the other events, and the Trees for Cities link works.
 - [ ] The footer "Admin" link + passcode `trees2026` opens the admin console.
 - [ ] Enter your token there, change a number, click **Publish changes**, and
       the public site updates within a couple of minutes.
