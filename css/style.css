@@ -196,6 +196,15 @@ a:hover { text-decoration: underline; }
   max-width: 640px;
 }
 .hero .join-note strong { color: #fff; }
+.hero .join-note a,
+.hero .join-note a strong {
+  color: var(--cyan);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.hero .join-note a:hover { color: #fff; }
 
 .join-steps {
   margin: 10px 0 2px 22px;
