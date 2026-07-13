@@ -194,7 +194,7 @@ function renderWeekTable() {
     </td></tr></tbody>`;
     return;
   }
-  let head = "<thead><tr><th>Team</th>";
+  let head = "<thead><tr><th>Squad</th>";
   for (let w = 1; w <= weeks; w++) head += `<th>Week ${w}</th>`;
   head += "<th>Total</th></tr></thead>";
 

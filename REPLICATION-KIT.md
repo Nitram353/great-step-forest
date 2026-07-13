@@ -78,17 +78,17 @@ in "Fund" is crossed out by hand (a `<span class="fun-d">d</span>` whose
 marker strokes in cyan, rounded caps, slightly different widths/opacities —
 with the letter clearly visible underneath; the footer variant is pink),
 the joke being that it's Fun raising as
-much as Fund raising. Four teams compete for 3 weeks (15 July – 6 August;
+much as Fund raising. Four squads compete for 3 weeks (15 July – 6 August;
 the final day counts into week 3) to raise money for the charity **Trees for
 Cities** (link to https://www.treesforcities.org so visitors understand the
-purpose). Participants download the **StepUp** app and join their team via
-that team's own join link — the home page shows four "Join …" buttons, one
-per team (`teams[].joinUrl`) — and pledge £10 on a **JustGiving** page.
-Every donation must be tagged with name, team and event — a permanent
-warning note in the sidebar says so. Teams' weekly step counts convert to
+purpose). Participants download the **StepUp** app and join their squad via
+that squad's own join link — the home page shows four "Join …" buttons, one
+per squad (`teams[].joinUrl`) — and pledge £10 on a **JustGiving** page.
+Every donation must be tagged with name, squad and event — a permanent
+warning note in the sidebar says so. Squads' weekly step counts convert to
 distance (0.75 m per step) and race along a world route (see 3.6); an
 admin-written weekly announcement on the home page reports which destination
-each team has reached. The per-team join links, the StepUp app URL
+each squad has reached. The per-squad join links, the StepUp app URL
 (`settings.stepUpAppUrl`) and the JustGiving URL are all configurable;
 buttons show "coming soon" while their URL is empty. The top-5 individual
 steppers leaderboard exists but ships hidden
@@ -121,11 +121,12 @@ README.md       — how the site works + admin instructions
 - Feel: white background, generous whitespace, 14px-radius cards with soft
   blue-tinted shadows, pill-shaped buttons and nav links.
 - Header: sticky, deep cobalt background; round gradient badge with a 🌳 emoji
-  as the logo; site name in Fraunces; nav pills ("Leaderboards", "The
-  Journey") where the active page is a white pill with cobalt text.
+  as the logo; site name in Fraunces; nav pills ("Leaderboards", "Race
+  Across the World") where the active page is a white pill with cobalt text.
 - Hero (both public pages): deep cobalt with two soft radial glows (cyan top
-  right, lavender bottom left); an uppercase "WEEK 3 OF 6 · RESULTS IN" pill
-  with a pulsing cyan dot; a big Fraunces headline ("Four teams. Three weeks.
+  right, lavender bottom left); an uppercase pill ("STARTS 15 JULY · SIGN UP
+  NOW" pre-launch, "WEEK 1 OF 3 · RESULTS IN" once running)
+  with a pulsing cyan dot; a big Fraunces headline ("Four squads. Three weeks.
   Millions of steps for the city's trees."); a lede paragraph linking to
   Trees for Cities in cyan.
 - A stat strip of 4 white cards overlapping the hero bottom by ~78px
@@ -154,11 +155,11 @@ README.md       — how the site works + admin instructions
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
     "totalWalkers": 0,
     "showTopSteppers": false,
-    "announcement": "All four teams are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each team has reached."
+    "announcement": "All four squads are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each squad has reached."
   },
   "teams": [
     { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 0, "joinUrl": "https://join.thestepupapp.com/OqgHeh" },
-    { "id": "bumblebees", "name": "The Bumblebees", "color": "#f0a800", "emoji": "🐝", "members": 0, "joinUrl": "https://join.thestepupapp.com/ppCATZ" },
+    { "id": "bumblebees", "name": "The Bees", "color": "#f0a800", "emoji": "🐝", "members": 0, "joinUrl": "https://join.thestepupapp.com/ppCATZ" },
     { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 0, "joinUrl": "https://join.thestepupapp.com/rFHdxg" },
     { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 0, "joinUrl": "https://join.thestepupapp.com/Wfj4g4" }
   ],
@@ -173,11 +174,11 @@ README.md       — how the site works + admin instructions
   "events": [
     { "title": "3km fun run", "date": "2026-08-05", "time": "6pm",
       "location": "starting at RRA office",
-      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!(Deadline to sign up: 17th of July)",
+      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your squad's total!(Deadline to sign up: 17th of July)",
       "link": "", "linkLabel": "Sign up & pledge your £5", "icon": "", "featured": true },
     { "title": "Sip & Paint", "date": "2026-07-21", "time": "4pm",
       "location": "RRA office (2nd floor kitchen)",
-      "description": "Show off your artistic skills and paint a portrait of a colleague! We provide all the materials. Voting for the best portrait begins on 22 July. Win valuable points for your rally team!",
+      "description": "Show off your artistic skills and paint a portrait of a colleague! We provide all the materials. Voting for the best portrait begins on 22 July. Win valuable points for your rally squad!",
       "link": "", "linkLabel": "", "icon": "😊", "featured": false },
     { "title": "The Grand Finale", "date": "2026-08-06", "time": "6pm",
       "location": "RRA office",
@@ -201,10 +202,10 @@ Escape all user-editable strings before inserting into HTML.
 Hero extras (below the lede): a translucent call-out box — "**Want in?** To
 join the step challenge, take these two steps:" followed by a numbered list:
 "1) download the **StepUp** app (linked to `settings.stepUpAppUrl`) and join
-your team using its button below — that's where your steps are tracked" and
+your squad using its button below — that's where your steps are tracked" and
 "2) pledge **£10** to Trees for Cities on our **JustGiving** page" — then a
-row of four white pill buttons, one per team ("🦉 Join The Owls →" etc.,
-each with a 3px border in the team colour, linking to that team's
+row of four white pill buttons, one per squad ("🦉 Join The Owls →" etc.,
+each with a 3px border in the squad colour, linking to that squad's
 `joinUrl`), and below them an outlined "Donate on JustGiving" button linking
 to `settings.justGivingUrl`. While a URL is empty its button renders dimmed
 and unclickable ("The Owls — link coming soon" / "JustGiving — coming
@@ -222,20 +223,20 @@ empty.
 Two-column layout (main column + 330px sticky sidebar; single column on
 mobile). Main column, in order:
 
-1. **🏆 Team leaderboard** — one card, a row per team sorted by cumulative
-   steps: big serif rank number, team colour chip + emoji + name (crown 👑 on
+1. **🏆 Squad leaderboard** — one card, a row per squad sorted by cumulative
+   steps: big serif rank number, squad colour chip + emoji + name (crown 👑 on
    the leader), "N walkers · X km travelled" subline, right-aligned steps
-   total, and a full-width progress bar in the team colour scaled to the
+   total, and a full-width progress bar in the squad colour scaled to the
    leader's total.
-2. **📅 Week by week** — table (grey uppercase header row): a row per team,
+2. **📅 Week by week** — table (grey uppercase header row): a row per squad,
    one column per week up to `dataThroughWeek`, plus a bold cobalt total.
-3. **⭐ Top steppers** — same row style as the team board for the top 5
-   individuals (🥇🥈🥉 on the first three), with their team chip and name.
+3. **⭐ Top steppers** — same row style as the squad board for the top 5
+   individuals (🥇🥈🥉 on the first three), with their squad chip and name.
    The whole section is hidden when `settings.showTopSteppers` is false
    (the default).
 4. **💚 Fundraising leaderboard** — a teal→blue gradient banner card showing
-   the grand total (sum of team funds) plus "That's enough to plant roughly
-   N urban trees 🌳" (total ÷ £6, rounded down), then a leaderboard of teams
+   the grand total (sum of squad funds) plus "That's enough to plant roughly
+   N urban trees 🌳" (total ÷ £6, rounded down), then a leaderboard of squads
    by money raised with bars.
 
 Sidebar, in order:
@@ -245,7 +246,7 @@ Sidebar, in order:
    pill, date/time/location line, description, and a white pill button using
    `linkLabel` → `link` (new tab).
 2. **Warning note** — an always-visible amber card: "⚠️ **Important:** you
-   must tag every donation with your **name**, **team** and **event**."
+   must tag every donation with your **name**, **squad** and **event**."
 3. **📌 Upcoming events** — the remaining events sorted by date: uppercase
    bright-blue date line, bold title, location, small description, optional
    link.
@@ -263,10 +264,10 @@ Sidebar, in order:
 
 Nav label and headline: "Race Across the World", with the italic subheading
 "Each destination on the route is home to one of our interns." Convert each
-team's cumulative steps to km (× 0.75 / 1000) and plot progress along the
+squad's cumulative steps to km (× 0.75 / 1000) and plot progress along the
 route. Steps → km everywhere uses
 `steps × stepLengthMeters × distanceMultiplier / 1000` — the multiplier
-(default 1.0, admin-editable) lets small teams still reach the later
+(default 1.0, admin-editable) lets small squads still reach the later
 destinations.
 
 Route waypoints `[name, lat, lng, legKmFromPrevious]` (~23,145 km total —
@@ -279,21 +280,21 @@ New York 40.7128,-74.0060,11760 · Mexico City 19.4326,-99.1332,3360
 ```
 
 Page contents:
-1. Four team cards (sorted by distance, coloured top borders): "2,825 km",
+1. Four squad cards (sorted by distance, coloured top borders): "2,825 km",
    plus "Passed **Igoumenitsa** — 15 km to **Ioannina**" computed from the
    route's cumulative distances.
 2. A **Leaflet 1.9.4** map (CDN: unpkg, CARTO `light_all` basemap tiles,
    OSM+CARTO attribution, scroll-wheel zoom off, 520px tall): the full route
    as a faint dashed cobalt polyline; a small white circle marker per
-   waypoint with a "City · N km" tooltip; per team a solid polyline in the
-   team colour along its progress, ending at the interpolated position, with
-   a teardrop div-icon marker (team colour, white border, team emoji) and a
+   waypoint with a "City · N km" tooltip; per squad a solid polyline in the
+   squad colour along its progress, ending at the interpolated position, with
+   a teardrop div-icon marker (squad colour, white border, squad emoji) and a
    popup showing steps + km. Fit bounds from London to ~400 km past the
    leader. Important: run fitBounds after layout settles (requestAnimationFrame)
    and refit via a ResizeObserver when the container size changes, so the map
    isn't blank if initialised while hidden.
 3. **🚩 Milestones along the route** — a grid tile per waypoint showing name,
-   cumulative km, and the emojis of teams that have passed it (pale blue
+   cumulative km, and the emojis of squads that have passed it (pale blue
    background once reached).
 
 ### 3.7 Admin page (`admin.html` + `js/admin.js`)
@@ -306,20 +307,20 @@ Page contents:
 - **Publishing setup card**: two fields — repository `owner/name` and GitHub
   token — remembered in localStorage only. Explain in the page copy that the
   token stays in the browser.
-- **Links card**: one StepUp join-link field per team (`teams[].joinUrl`),
+- **Links card**: one StepUp join-link field per squad (`teams[].joinUrl`),
   plus `settings.stepUpAppUrl` and `settings.justGivingUrl` — all editable
   without code.
 - **Announcement card**: a textarea for `settings.announcement` (the weekly
   Race Across the World update on the home page).
-- **Walkers card**: one input per team for `teams[].members`, plus a
-  `settings.totalWalkers` manual-total override (0 = sum the teams).
+- **Walkers card**: one input per squad for `teams[].members`, plus a
+  `settings.totalWalkers` manual-total override (0 = sum the squads).
 - **Top steppers card**: includes a checkbox bound to
   `settings.showTopSteppers` that shows/hides the section on the site.
 - **Form cards** generated from data.json: "results through week" selector
-  (including a week-0 "Not started yet" option); per-team blocks (left
-  border in team colour) with one step input per week (`totalWeeks`, so 3);
-  per-team £ raised;
-  top-stepper rows (name / team select / steps / remove + add button); event
+  (including a week-0 "Not started yet" option); per-squad blocks (left
+  border in squad colour) with one step input per week (`totalWeeks`, so 3);
+  per-squad £ raised;
+  top-stepper rows (name / squad select / steps / remove + add button); event
   editors (title, date, time, location, description, link, link label, emoji
   icon, featured checkbox, remove + add button).
 - **Publish**: collect the forms back into the data.json shape, then via the
@@ -335,7 +336,7 @@ Page contents:
    the announcement panel and donation-tagging note render, the JustGiving
    button shows "coming soon" while its URL is empty, the map renders with
    4 markers at London, the Top steppers section is hidden, and the admin
-   unlocks with `trees2026` and builds 12 step inputs (4 teams × 3 weeks).
+   unlocks with `trees2026` and builds 12 step inputs (4 squads × 3 weeks).
 2. `git init`, commit everything, push to the user's repo
    (`https://x-access-token:<TOKEN>@github.com/<user>/<repo>.git`), then
    reset the remote URL so the token isn't stored in git config.
@@ -352,10 +353,10 @@ Page contents:
 
 - [ ] `https://<your-username>.github.io/<repo-name>/` loads with the blue
       hero, the strikethrough "d" in the site name, the two-step
-      StepUp/JustGiving call-out with the four team join buttons, the 📣
+      StepUp/JustGiving call-out with the four squad join buttons, the 📣
       announcement panel, and four stat cards (all zeros pre-launch).
 - [ ] "Race Across the World" shows a map with a dashed route from London
-      to Mexico City and 4 team markers at London.
+      to Mexico City and 4 squad markers at London.
 - [ ] The sidebar features the 3km fun run, shows the amber donation-tagging
       note, lists the other events, and the Trees for Cities link works.
 - [ ] The footer "Admin" link + passcode `trees2026` opens the admin console.

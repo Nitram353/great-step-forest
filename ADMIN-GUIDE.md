@@ -27,13 +27,13 @@ friendly form that rewrites that file for you. Nothing else ever changes.
    `Nitram353/great-step-forest` and paste the GitHub token into the token
    box. Both are remembered by this browser for next time.
 
-## 3. How step tracking works (participants → teams)
+## 3. How step tracking works (participants → squads)
 
-The website keeps score **per team per week**. Individual step counts live
-in the **StepUp** app — everyone downloads it and joins their team using
-that team's join link (each team has its own, shown as four buttons on the
+The website keeps score **per squad per week**. Individual step counts live
+in the **StepUp** app — everyone downloads it and joins their squad using
+that squad's join link (each squad has its own, shown as four buttons on the
 home page), and their phone tracks their steps. Each week you read each
-team's total out of StepUp and type the four totals into the website's
+squad's total out of StepUp and type the four totals into the website's
 admin page.
 
 (There is also a hidden **top 5 individuals** leaderboard — it's switched
@@ -49,18 +49,18 @@ The challenge runs **3 weeks, 15 July – 6 August**. The final day
 Say week 1 has just finished:
 
 1. Open the admin page and unlock it.
-2. **👟 Weekly steps** — for each of the four teams, type the team's week-1
+2. **👟 Weekly steps** — for each of the four squads, type the squad's week-1
    total (from StepUp) into the **Wk 1** box. Leave future weeks at 0.
 3. At the top of that card, set **"Results entered through week"** to
    **Week 1**. (This controls what the site shows — the leaderboards, the
    week-by-week table and the "Week 1 of 3" badge all follow it.)
 4. **📣 Weekly announcement** — rewrite the announcement text to say which
-   destination each team has reached in the Race Across the World (e.g.
+   destination each squad has reached in the Race Across the World (e.g.
    "The Owls have stormed past Paris, the Dolphins are closing in…").
-5. **💚 Money raised** — update each team's running £ total from the tagged
+5. **💚 Money raised** — update each squad's running £ total from the tagged
    donations on JustGiving (this is why every donation must be tagged with
-   name, team and event).
-6. **🚶 Walkers** — keep the per-team walker counts up to date as people
+   name, squad and event).
+6. **🚶 Walkers** — keep the per-squad walker counts up to date as people
    sign up; the "colleagues walking" tile adds them up automatically (or
    type a manual total to override).
 7. Click **🚀 Publish changes**. You'll see "✅ Published!" — the public site
@@ -73,21 +73,20 @@ in the week-3 numbers.
 
 ## 5. Other things you can change on the admin page
 
-- **🔗 Sign-up & donation links** — one StepUp join link per team (these
+- **🔗 Sign-up & donation links** — one StepUp join link per squad (these
   drive the four "Join …" buttons on the home page), the StepUp app download
-  URL, and the JustGiving URL. A team's button shows "coming soon" while its
+  URL, and the JustGiving URL. A squad's button shows "coming soon" while its
   field is empty. (Event sign-up links are set per event in the Events
   section.)
 - **Distance multiplier** (in the Weekly steps card) — scales every km shown
-  on the site. Keep it at 1.0 for real distances; if the teams turn out to be
+  on the site. Keep it at 1.0 for real distances; if the squads turn out to be
   small and the Race Across the World map needs livening up, raise it (e.g.
   5.0 makes every real km count as 5 km on the map) and publish. You can
   change it at any point during the challenge — past weeks rescale too,
   keeping the race fair.
 - **📌 Events** — add/edit/remove events. Tick **Featured** to give an event
-  the big gradient card at the top of the sidebar (the 5k fun run and the
-  Darts & raffle night are both featured now); the emoji box sets the big
-  background picture on that card.
+  the big gradient card at the top of the sidebar; the emoji box sets the
+  big background picture on that card.
 
 ## 6. Test run (do this now, then undo it)
 
@@ -96,7 +95,7 @@ in the week-3 numbers.
 3. Change the weekly announcement text to something like "Test: the Owls
    are on the road to Paris!".
 4. Publish, wait a minute, then open the home page: the Owls should lead the
-   team board with 50,000 steps (37.5 km), the week-by-week table should
+   squad board with 50,000 steps (37.5 km), the week-by-week table should
    show a Week 1 column, and your announcement should appear in the 📣
    panel. Check the Race Across the World page too — the Owls' marker
    should have left London.

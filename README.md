@@ -3,15 +3,15 @@
 A London office step-challenge website in aid of [Trees for Cities](https://www.treesforcities.org).
 See [ADMIN-GUIDE.md](ADMIN-GUIDE.md) for the week-by-week admin walkthrough.
 
-Four teams compete over three weeks (15 July – 6 August; the final day counts
+Four squads compete over three weeks (15 July – 6 August; the final day counts
 into week 3) to walk the furthest and raise the most money.
-The site shows team and individual leaderboards, fundraising totals, competition
-events, and a live map of each team's cumulative journey from London towards Istanbul.
+The site shows squad and individual leaderboards, fundraising totals, competition
+events, and a live Race Across the World map of each squad's cumulative journey from London towards Mexico City.
 
 ## How it works
 
 - **Static site** — plain HTML/CSS/JS, hosted free on GitHub Pages. No server, no build step.
-- **All data lives in [`data/data.json`](data/data.json)** — steps per team per week,
+- **All data lives in [`data/data.json`](data/data.json)** — steps per squad per week,
   fundraising totals, top individual steppers, and sidebar events.
 - **Public site is read-only.** Visitors just see the leaderboards.
 
@@ -48,11 +48,11 @@ Everything lives in `data/data.json`:
 
 - `settings` — competition name, start date, number of weeks, average step length
   (0.75 m/step is used to convert steps → kilometres).
-- `teams` — id, display name, colour, emoji, member count. Rename teams here.
+- `teams` — id, display name, colour, emoji, member count. Rename squads here.
 - `events` — sidebar events; set `"featured": true` to pin one to the big highlight card.
 
-The journey route (London → Dover → Paris → Geneva → Milan → Rome → Athens → Istanbul,
-~4,250 km) is defined in [`js/journey.js`](js/journey.js).
+The race route (London → Paris → Warsaw → Kyiv → Istanbul → New Delhi → New York →
+Mexico City, ~23,145 km) is defined in [`js/journey.js`](js/journey.js).
 
 ## Local preview
 

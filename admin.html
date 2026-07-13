@@ -24,7 +24,7 @@
       </a>
       <nav class="site-nav">
         <a href="index.html">Leaderboards</a>
-        <a href="journey.html">The Journey</a>
+        <a href="journey.html">Race Across the World</a>
       </nav>
     </div>
   </header>
@@ -67,7 +67,7 @@
 
       <div class="admin-card">
         <h2>🔗 Sign-up & donation links</h2>
-        <p class="sub">The buttons on the home page point to these: one StepUp join link per team, plus the JustGiving donations page. Leave a field empty until the link exists — its button will show "coming soon" until then. (Event sign-up links are set per event in the Events section below.)</p>
+        <p class="sub">The buttons on the home page point to these: one StepUp join link per squad, plus the JustGiving donations page. Leave a field empty until the link exists — its button will show "coming soon" until then. (Event sign-up links are set per event in the Events section below.)</p>
         <div class="grid-2" id="join-url-fields"></div>
         <div class="grid-2">
           <div class="field">
@@ -83,7 +83,7 @@
 
       <div class="admin-card">
         <h2>📣 Weekly announcement</h2>
-        <p class="sub">Shown in the "Race Across the World — weekly update" panel at the top of the home page. Update it each week to say which destination each team has reached. Leave empty to hide the panel.</p>
+        <p class="sub">Shown in the "Race Across the World — weekly update" panel at the top of the home page. Update it each week to say which destination each squad has reached. Leave empty to hide the panel.</p>
         <div class="field">
           <label for="set-announcement">Announcement text</label>
           <textarea id="set-announcement" rows="3"></textarea>
@@ -92,17 +92,17 @@
 
       <div class="admin-card">
         <h2>🚶 Walkers</h2>
-        <p class="sub">Number of colleagues walking in each team. The "colleagues walking" tile on the home page adds these up — or type a manual total below to override the sum.</p>
+        <p class="sub">Number of colleagues walking in each squad. The "colleagues walking" tile on the home page adds these up — or type a manual total below to override the sum.</p>
         <div class="grid-2" id="walker-fields"></div>
         <div class="field" style="max-width:300px">
-          <label for="set-total-walkers">Total colleagues walking (0 = add up the teams)</label>
+          <label for="set-total-walkers">Total colleagues walking (0 = add up the squads)</label>
           <input type="number" min="0" step="1" id="set-total-walkers" />
         </div>
       </div>
 
       <div class="admin-card">
         <h2>👟 Weekly steps</h2>
-        <p class="sub">Enter total steps recorded by each team, per week. Leave future weeks at 0.</p>
+        <p class="sub">Enter total steps recorded by each squad, per week. Leave future weeks at 0.</p>
         <div class="grid-2" style="max-width:560px">
           <div class="field">
             <label for="data-through-week">Results entered through week</label>
@@ -113,13 +113,13 @@
             <input type="number" min="0.1" step="0.1" id="set-distance-multiplier" />
           </div>
         </div>
-        <p class="sub">The multiplier scales every kilometre shown on the site (leaderboards and the Race Across the World map). At 1.0 distances are real; raise it (e.g. 5) if teams need a boost to reach the later destinations.</p>
+        <p class="sub">The multiplier scales every kilometre shown on the site (leaderboards and the Race Across the World map). At 1.0 distances are real; raise it (e.g. 5) if squads need a boost to reach the later destinations.</p>
         <div id="steps-blocks"></div>
       </div>
 
       <div class="admin-card">
         <h2>💚 Money raised</h2>
-        <p class="sub">Running fundraising total per team, in pounds.</p>
+        <p class="sub">Running fundraising total per squad, in pounds.</p>
         <div class="grid-2" id="funds-fields"></div>
       </div>
 

@@ -13,7 +13,7 @@
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
     "totalWalkers": 0,
     "showTopSteppers": false,
-    "announcement": "All four teams are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each team has reached.",
+    "announcement": "All four squads are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each squad has reached.",
     "stepUpAppUrl": "https://thestepupapp.com/"
   },
   "teams": [
@@ -27,7 +27,7 @@
     },
     {
       "id": "bumblebees",
-      "name": "The Bumblebees",
+      "name": "The Bees",
       "color": "#f0a800",
       "emoji": "🐝",
       "members": 0,
@@ -85,7 +85,7 @@
       "date": "2026-08-05",
       "time": "6pm",
       "location": "starting at RRA office",
-      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your team's total!(Deadline to sign up: 17th of July)",
+      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your squad's total!(Deadline to sign up: 17th of July)",
       "link": "",
       "linkLabel": "Sign up & pledge your £5",
       "icon": "",
@@ -96,7 +96,7 @@
       "date": "2026-07-21",
       "time": "All day",
       "location": "RRA office (2nd floor kitchen)",
-      "description": "Show off your artistic skills and paint a portrait of a colleague! We provide all the materials. Voting for the best portrait is the on 22nd July at 4pm. Win valuable points for your rally team!",
+      "description": "Show off your artistic skills and paint a portrait of a colleague! We provide all the materials. Voting for the best portrait is the on 22nd July at 4pm. Win valuable points for your rally squad!",
       "link": "",
       "linkLabel": "",
       "icon": "😊",
