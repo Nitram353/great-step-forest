@@ -6,12 +6,12 @@
     "charityUrl": "https://www.treesforcities.org",
     "startDate": "2026-07-15",
     "totalWeeks": 3,
-    "dataThroughWeek": 0,
+    "dataThroughWeek": 1,
     "stepLengthMeters": 0.75,
     "distanceMultiplier": 1,
     "signupPledge": "£10",
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
-    "totalWalkers": 86,
+    "totalWalkers": 90,
     "showTopSteppers": true,
     "announcement": "All four squads are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each squad has reached.",
     "stepUpAppUrl": "https://thestepupapp.com/"
@@ -22,7 +22,7 @@
       "name": "The Owls",
       "color": "#0f8a3d",
       "emoji": "🦉",
-      "members": 24,
+      "members": 25,
       "joinUrl": "https://join.thestepupapp.com/OqgHeh"
     },
     {
@@ -38,7 +38,7 @@
       "name": "The Border Collies",
       "color": "#d92632",
       "emoji": "🐕",
-      "members": 21,
+      "members": 23,
       "joinUrl": "https://join.thestepupapp.com/rFHdxg"
     },
     {
@@ -46,7 +46,7 @@
       "name": "The Dolphins",
       "color": "#2d53ed",
       "emoji": "🐬",
-      "members": 16,
+      "members": 17,
       "joinUrl": "https://join.thestepupapp.com/Wfj4g4"
     }
   ],
