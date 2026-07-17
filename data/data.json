@@ -80,9 +80,19 @@
   },
   "topIndividuals": [
     {
-      "name": "Dee Symons",
+      "name": "Mohammed Khan",
       "team": "collies",
-      "steps": 48627
+      "steps": 49092
+    },
+    {
+      "name": "Harriet Wood",
+      "team": "dolphins",
+      "steps": 45412
+    },
+    {
+      "name": "Michelle Weir",
+      "team": "owls",
+      "steps": 45085
     },
     {
       "name": "Anna Penfold",
@@ -92,17 +102,7 @@
     {
       "name": "Dee Symons",
       "team": "owls",
-      "steps": 44729
-    },
-    {
-      "name": "Harriet Wood",
-      "team": "dolphins",
-      "steps": 43432
-    },
-    {
-      "name": "Rebecca Cook",
-      "team": "collies",
-      "steps": 43336
+      "steps": 44796
     }
   ],
   "events": [
