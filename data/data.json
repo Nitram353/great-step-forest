@@ -8,7 +8,7 @@
     "totalWeeks": 3,
     "dataThroughWeek": 1,
     "stepLengthMeters": 0.75,
-    "distanceMultiplier": 1,
+    "distanceMultiplier": 6,
     "signupPledge": "£10",
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
     "totalWalkers": 90,
