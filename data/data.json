@@ -52,22 +52,22 @@
   ],
   "weeklySteps": {
     "owls": [
-      710000,
+      1100000,
       0,
       0
     ],
     "bumblebees": [
-      780000,
+      1170000,
       0,
       0
     ],
     "collies": [
-      625000,
+      859100,
       0,
       0
     ],
     "dolphins": [
-      487000,
+      796400,
       0,
       0
     ]
@@ -80,29 +80,29 @@
   },
   "topIndividuals": [
     {
-      "name": "Mohammed Khan",
-      "team": "collies",
-      "steps": 49092
-    },
-    {
-      "name": "Harriet Wood",
-      "team": "dolphins",
-      "steps": 45412
-    },
-    {
-      "name": "Michelle Weir",
-      "team": "owls",
-      "steps": 45085
-    },
-    {
       "name": "Anna Penfold",
       "team": "bumblebees",
-      "steps": 45085
+      "steps": 93928
     },
     {
       "name": "Dee Symons",
       "team": "owls",
-      "steps": 44796
+      "steps": 86206
+    },
+    {
+      "name": "Harriet Wood",
+      "team": "dolphins",
+      "steps": 85254
+    },
+    {
+      "name": "Mohammed Khan",
+      "team": "collies",
+      "steps": 82247
+    },
+    {
+      "name": "Jane Bird",
+      "team": "owls",
+      "steps": 76700
     }
   ],
   "events": [
