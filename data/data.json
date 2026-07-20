@@ -11,7 +11,7 @@
     "distanceMultiplier": 4,
     "signupPledge": "£10",
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
-    "totalWalkers": 90,
+    "totalWalkers": 102,
     "showTopSteppers": true,
     "announcement": "All four squads are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each squad has reached.",
     "stepUpAppUrl": "https://thestepupapp.com/"
@@ -22,7 +22,7 @@
       "name": "The Owls",
       "color": "#0f8a3d",
       "emoji": "🦉",
-      "members": 25,
+      "members": 27,
       "joinUrl": "https://join.thestepupapp.com/OqgHeh"
     },
     {
@@ -30,7 +30,7 @@
       "name": "The Bees",
       "color": "#f0a800",
       "emoji": "🐝",
-      "members": 25,
+      "members": 28,
       "joinUrl": "https://join.thestepupapp.com/ppCATZ"
     },
     {
@@ -38,7 +38,7 @@
       "name": "The Border Collies",
       "color": "#d92632",
       "emoji": "🐕",
-      "members": 23,
+      "members": 24,
       "joinUrl": "https://join.thestepupapp.com/rFHdxg"
     },
     {
@@ -46,7 +46,7 @@
       "name": "The Dolphins",
       "color": "#2d53ed",
       "emoji": "🐬",
-      "members": 17,
+      "members": 23,
       "joinUrl": "https://join.thestepupapp.com/Wfj4g4"
     }
   ],
