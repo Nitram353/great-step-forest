@@ -50,13 +50,15 @@ site without building it from scratch.
 
 If you just want your own working copy, tell Claude Code:
 
-> Clone https://github.com/Nitram353/great-step-forest.git into this folder,
-> remove its git history and start a fresh repo, then push it to my GitHub
-> repository `<your-username>/great-step-forest` (I'll give you a token when
-> you ask) and enable GitHub Pages on the main branch. Then verify the site
-> is live and show me the URL.
+> Clone https://github.com/Nitram353/great-step-forest.git into this folder
+> and remove its git history and start a fresh repo. Change the admin page's
+> prefilled repository (in js/admin.js) and any absolute site/repo URLs in
+> README.md to my own repository `<your-username>/great-step-forest`, then
+> push it there (I'll give you a token when you ask) and enable GitHub Pages
+> on the main branch. Then verify the site is live and show me the URL.
 
-Done. Skip to Part 4 to check it worked. If you'd rather build it yourself
+This gives you an exact copy, including all the competition data entered so
+far. Done — skip to Part 4 to check it worked. If you'd rather build it yourself
 and understand every piece, use Part 3 instead.
 
 ---
@@ -91,9 +93,9 @@ admin-written weekly announcement on the home page reports which destination
 each squad has reached. The per-squad join links, the StepUp app URL
 (`settings.stepUpAppUrl`) and the JustGiving URL are all configurable;
 buttons show "coming soon" while their URL is empty. The top-5 individual
-steppers leaderboard exists but ships hidden
-(`settings.showTopSteppers: false`). The public site is read-only; one
-admin updates everything through a hidden admin page.
+steppers leaderboard can be shown or hidden with
+`settings.showTopSteppers` (currently shown). The public site is read-only;
+one admin updates everything through a hidden admin page.
 
 ### 3.2 Files
 
@@ -147,43 +149,139 @@ README.md       — how the site works + admin instructions
     "charityUrl": "https://www.treesforcities.org",
     "startDate": "2026-07-15",
     "totalWeeks": 3,
-    "dataThroughWeek": 0,
+    "dataThroughWeek": 1,
     "stepLengthMeters": 0.75,
-    "distanceMultiplier": 1.0,
-    "stepUpAppUrl": "https://thestepupapp.com/",
+    "distanceMultiplier": 4,
     "signupPledge": "£10",
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
-    "totalWalkers": 0,
-    "showTopSteppers": false,
-    "announcement": "All four squads are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each squad has reached."
+    "totalWalkers": 102,
+    "showTopSteppers": true,
+    "announcement": "All four squads are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each squad has reached.",
+    "stepUpAppUrl": "https://thestepupapp.com/"
   },
   "teams": [
-    { "id": "owls", "name": "The Owls", "color": "#0f8a3d", "emoji": "🦉", "members": 0, "joinUrl": "https://join.thestepupapp.com/OqgHeh" },
-    { "id": "bumblebees", "name": "The Bees", "color": "#f0a800", "emoji": "🐝", "members": 0, "joinUrl": "https://join.thestepupapp.com/ppCATZ" },
-    { "id": "collies", "name": "The Border Collies", "color": "#d92632", "emoji": "🐕", "members": 0, "joinUrl": "https://join.thestepupapp.com/rFHdxg" },
-    { "id": "dolphins", "name": "The Dolphins", "color": "#2d53ed", "emoji": "🐬", "members": 0, "joinUrl": "https://join.thestepupapp.com/Wfj4g4" }
+    {
+      "id": "owls",
+      "name": "The Owls",
+      "color": "#0f8a3d",
+      "emoji": "🦉",
+      "members": 27,
+      "joinUrl": "https://join.thestepupapp.com/OqgHeh"
+    },
+    {
+      "id": "bumblebees",
+      "name": "The Bees",
+      "color": "#f0a800",
+      "emoji": "🐝",
+      "members": 28,
+      "joinUrl": "https://join.thestepupapp.com/ppCATZ"
+    },
+    {
+      "id": "collies",
+      "name": "The Border Collies",
+      "color": "#d92632",
+      "emoji": "🐕",
+      "members": 24,
+      "joinUrl": "https://join.thestepupapp.com/rFHdxg"
+    },
+    {
+      "id": "dolphins",
+      "name": "The Dolphins",
+      "color": "#2d53ed",
+      "emoji": "🐬",
+      "members": 23,
+      "joinUrl": "https://join.thestepupapp.com/Wfj4g4"
+    }
   ],
   "weeklySteps": {
-    "owls":       [0, 0, 0],
-    "bumblebees": [0, 0, 0],
-    "collies":    [0, 0, 0],
-    "dolphins":   [0, 0, 0]
+    "owls": [
+      1240000,
+      0,
+      0
+    ],
+    "bumblebees": [
+      1410000,
+      0,
+      0
+    ],
+    "collies": [
+      1010000,
+      0,
+      0
+    ],
+    "dolphins": [
+      961600,
+      0,
+      0
+    ]
   },
-  "funds": { "owls": 0, "bumblebees": 0, "collies": 0, "dolphins": 0 },
-  "topIndividuals": [],
+  "funds": {
+    "owls": 105,
+    "bumblebees": 65,
+    "collies": 110,
+    "dolphins": 60
+  },
+  "topIndividuals": [
+    {
+      "name": "Anna Penfold",
+      "team": "bumblebees",
+      "steps": 108940
+    },
+    {
+      "name": "Mohammed Khan",
+      "team": "collies",
+      "steps": 94424
+    },
+    {
+      "name": "Harriet Wood",
+      "team": "dolphins",
+      "steps": 92238
+    },
+    {
+      "name": "Michelle Weir",
+      "team": "owls",
+      "steps": 91666
+    },
+    {
+      "name": "Dee Symons",
+      "team": "owls",
+      "steps": 90319
+    }
+  ],
   "events": [
-    { "title": "3km fun run", "date": "2026-08-05", "time": "6pm",
+    {
+      "title": "3km fun run",
+      "date": "2026-08-05",
+      "time": "6pm",
       "location": "starting at RRA office",
-      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your squad's total!(Deadline to sign up: 17th of July)",
-      "link": "", "linkLabel": "Sign up & pledge your £5", "icon": "", "featured": true },
-    { "title": "Sip & Paint", "date": "2026-07-21", "time": "4pm",
+      "description": "Join the office fun run around Green Park to support Trees for Cities. Every colleague who takes part donates £5 to Trees for Cities, and every step counts towards your squad's total!(Deadline to sign up: 29th of July)",
+      "link": "https://docs.google.com/spreadsheets/d/1fqGvm7ky0NxoKALiuaTqjHqnDp61ay7QIpJUsWGULEc/edit?usp=sharing",
+      "linkLabel": "Sign up & pledge your £5",
+      "icon": "",
+      "featured": true
+    },
+    {
+      "title": "Sip & Paint",
+      "date": "2026-07-21",
+      "time": "All day",
       "location": "RRA office (2nd floor kitchen)",
-      "description": "Show off your artistic skills and paint a portrait of a colleague! We provide all the materials. Voting for the best portrait begins on 22 July. Win valuable points for your rally squad!",
-      "link": "", "linkLabel": "", "icon": "😊", "featured": false },
-    { "title": "The Grand Finale", "date": "2026-08-06", "time": "6pm",
+      "description": "Show off your artistic skills and paint a portrait of a colleague! Donate £10 to take part – we'll provide all the materials. Voting for the best portrait is the on 22nd July at 4pm. Win valuable points for your rally squad!",
+      "link": "",
+      "linkLabel": "",
+      "icon": "😊",
+      "featured": false
+    },
+    {
+      "title": "The Grand Finale",
+      "date": "2026-08-06",
+      "time": "6pm",
       "location": "RRA office",
       "description": "Keep an eye out for details regarding the fundraising project's grand finale night. Get excited!",
-      "link": "", "linkLabel": "", "icon": "😍", "featured": false }
+      "link": "",
+      "linkLabel": "",
+      "icon": "😍",
+      "featured": false
+    }
   ]
 }
 ```
@@ -232,8 +330,7 @@ mobile). Main column, in order:
    one column per week up to `dataThroughWeek`, plus a bold cobalt total.
 3. **⭐ Top steppers** — same row style as the squad board for the top 5
    individuals (🥇🥈🥉 on the first three), with their squad chip and name.
-   The whole section is hidden when `settings.showTopSteppers` is false
-   (the default).
+   The whole section is hidden when `settings.showTopSteppers` is false.
 4. **💚 Fundraising leaderboard** — a teal→blue gradient banner card showing
    the grand total (sum of squad funds) plus "That's enough to plant roughly
    N urban trees 🌳" (total ÷ £6, rounded down), then a leaderboard of squads
@@ -332,34 +429,49 @@ Page contents:
 
 ### 3.8 Publish & verify (Claude: do this too)
 
-1. Serve the folder locally and verify: hero pill says "Starts 15 July",
-   the announcement panel and donation-tagging note render, the JustGiving
-   button shows "coming soon" while its URL is empty, the map renders with
-   4 markers at London, the Top steppers section is hidden, and the admin
-   unlocks with `trees2026` and builds 12 step inputs (4 squads × 3 weeks).
-2. `git init`, commit everything, push to the user's repo
+1. Serve the folder locally and verify against the data in 3.4: the hero
+   pill says "Week 1 of 3", the squad leaderboard shows The Bees leading
+   with 1,410,000 steps, the stat strip shows 102 colleagues walking and
+   £340 raised, the Top steppers board lists Anna Penfold first, the
+   announcement panel and donation-tagging note render, all four squad join
+   buttons and both JustGiving buttons are live links, the map shows 4
+   squad markers spread along the route past Kyiv/Istanbul (the ×4
+   distance multiplier is in effect), and the admin unlocks with
+   `trees2026` and builds 12 step inputs (4 squads × 3 weeks).
+2. Make it the user's own site: prefill the admin repository field
+   (`js/admin.js` localStorage fallback) with `<user>/<repo>` instead of
+   the original repo, and point any absolute site/repo URLs in README.md
+   at the user's repo.
+3. `git init`, commit everything, push to the user's repo
    (`https://x-access-token:<TOKEN>@github.com/<user>/<repo>.git`), then
    reset the remote URL so the token isn't stored in git config.
-3. Enable GitHub Pages via `POST /repos/<user>/<repo>/pages` with
+4. Enable GitHub Pages via `POST /repos/<user>/<repo>/pages` with
    `{"source":{"branch":"main","path":"/"}}`. If the token lacks the Pages
    permission, ask the user to switch it on at the repo's Settings → Pages
    (Deploy from a branch → main → / root).
-4. Poll `https://<user>.github.io/<repo>/` until it returns 200, then check
+5. Poll `https://<user>.github.io/<repo>/` until it returns 200, then check
    every page and data.json load, and give the user the live URL.
 
 ---
 
 ## Part 4 — Success checklist
 
+Your copy should look identical to the original
+(https://nitram353.github.io/great-step-forest/) — open them side by side.
+
 - [ ] `https://<your-username>.github.io/<repo-name>/` loads with the blue
-      hero, the strikethrough "d" in the site name, the two-step
+      hero, the hand-scribbled "d" in the site name, the two-step
       StepUp/JustGiving call-out with the four squad join buttons, the 📣
-      announcement panel, and four stat cards (all zeros pre-launch).
-- [ ] "Race Across the World" shows a map with a dashed route from London
-      to Mexico City and 4 squad markers at London.
+      announcement panel, and the "Week 1 of 3" pill.
+- [ ] The squad leaderboard shows The Bees 🐝 leading with 1,410,000 steps,
+      the stat strip shows 102 colleagues walking and £340 raised, and the
+      ⭐ Top steppers board lists Anna Penfold first.
+- [ ] "Race Across the World" shows the route from London to Mexico City
+      with the 4 squad markers spread out around Kyiv and Istanbul.
 - [ ] The sidebar features the 3km fun run, shows the amber donation-tagging
       note, lists the other events, and the Trees for Cities link works.
-- [ ] The footer "Admin" link + passcode `trees2026` opens the admin console.
+- [ ] The footer "Admin" link + passcode `trees2026` opens the admin console,
+      and the repository field shows YOUR repo (not the original).
 - [ ] Enter your token there, change a number, click **Publish changes**, and
       the public site updates within a couple of minutes.
 
