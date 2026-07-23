@@ -13,7 +13,7 @@
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
     "totalWalkers": 110,
     "showTopSteppers": true,
-    "announcement": "All four squads are lining up in London — the race begins on 15 July! Check back here every week to find out which destination each squad has reached.",
+    "announcement": "Check out the weekly updates on the step challenge here and see where each squad has travelled to!",
     "stepUpAppUrl": "https://thestepupapp.com/"
   },
   "teams": [
@@ -116,17 +116,6 @@
       "linkLabel": "Sign up & pledge your £5",
       "icon": "",
       "featured": true
-    },
-    {
-      "title": "Sip & Paint",
-      "date": "2026-07-21",
-      "time": "All day",
-      "location": "RRA office (2nd floor kitchen)",
-      "description": "Show off your artistic skills and paint a portrait of a colleague! Donate £10 to take part – we'll provide all the materials. Voting for the best portrait is the on 22nd July at 4pm. Win valuable points for your rally squad!",
-      "link": "",
-      "linkLabel": "",
-      "icon": "😊",
-      "featured": false
     },
     {
       "title": "The Grand Finale",
