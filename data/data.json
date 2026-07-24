@@ -80,29 +80,29 @@
   },
   "topIndividuals": [
     {
-      "name": "Anna Penfold",
-      "team": "bumblebees",
-      "steps": 131500
-    },
-    {
       "name": "Pui Wong",
       "team": "dolphins",
-      "steps": 129000
-    },
-    {
-      "name": "Tish Jerabek",
-      "team": "dolphins",
-      "steps": 126800
+      "steps": 201200
     },
     {
       "name": "Dee Symons",
       "team": "owls",
-      "steps": 124200
+      "steps": 177000
     },
     {
       "name": "Mohammed Khan",
       "team": "collies",
-      "steps": 119700
+      "steps": 173300
+    },
+    {
+      "name": "Tish Jerabek",
+      "team": "dolphins",
+      "steps": 166200
+    },
+    {
+      "name": "Anna Penfold",
+      "team": "bumblebees",
+      "steps": 161900
     }
   ],
   "events": [
