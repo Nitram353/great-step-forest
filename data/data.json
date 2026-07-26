@@ -80,29 +80,29 @@
   },
   "topIndividuals": [
     {
+      "name": "Harriet Wood",
+      "team": "dolphins",
+      "steps": 232200
+    },
+    {
       "name": "Pui Wong",
       "team": "dolphins",
-      "steps": 201200
+      "steps": 229800
+    },
+    {
+      "name": "Holly Haldane",
+      "team": "owls",
+      "steps": 220800
     },
     {
       "name": "Dee Symons",
       "team": "owls",
-      "steps": 177000
+      "steps": 211400
     },
     {
       "name": "Mohammed Khan",
       "team": "collies",
-      "steps": 173300
-    },
-    {
-      "name": "Tish Jerabek",
-      "team": "dolphins",
-      "steps": 166200
-    },
-    {
-      "name": "Anna Penfold",
-      "team": "bumblebees",
-      "steps": 161900
+      "steps": 209900
     }
   ],
   "events": [
