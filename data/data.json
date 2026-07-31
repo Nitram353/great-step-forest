@@ -11,7 +11,7 @@
     "distanceMultiplier": 4,
     "signupPledge": "£10",
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
-    "totalWalkers": 110,
+    "totalWalkers": 127,
     "showTopSteppers": true,
     "announcement": "Check out the weekly updates on the step challenge here and see where each squad has travelled to!",
     "stepUpAppUrl": "https://thestepupapp.com/"
@@ -22,7 +22,7 @@
       "name": "The Owls",
       "color": "#0f8a3d",
       "emoji": "🦉",
-      "members": 30,
+      "members": 33,
       "joinUrl": "https://join.thestepupapp.com/OqgHeh"
     },
     {
@@ -38,7 +38,7 @@
       "name": "The Border Collies",
       "color": "#d92632",
       "emoji": "🐕",
-      "members": 25,
+      "members": 32,
       "joinUrl": "https://join.thestepupapp.com/rFHdxg"
     },
     {
@@ -46,7 +46,7 @@
       "name": "The Dolphins",
       "color": "#2d53ed",
       "emoji": "🐬",
-      "members": 25,
+      "members": 32,
       "joinUrl": "https://join.thestepupapp.com/Wfj4g4"
     }
   ],
