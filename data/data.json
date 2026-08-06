@@ -59,17 +59,17 @@
     "bumblebees": [
       1410000,
       2110000,
-      1780000
+      2745700
     ],
     "collies": [
       1010000,
       1810000,
-      2110000
+      3338598
     ],
     "dolphins": [
       961600,
       1930000,
-      2240000
+      3445700
     ]
   },
   "funds": {
@@ -80,29 +80,29 @@
   },
   "topIndividuals": [
     {
-      "name": "Mohammed Khan",
-      "team": "collies",
-      "steps": 431000
+      "name": "Pui Wong",
+      "team": "dolphins",
+      "steps": 366400
     },
     {
-      "name": "Michelle Weir",
-      "team": "owls",
-      "steps": 422800
+      "name": "Mohammed Khan",
+      "team": "collies",
+      "steps": 365100
     },
     {
       "name": "Harriet Wood",
       "team": "dolphins",
-      "steps": 416300
+      "steps": 357400
     },
     {
-      "name": "Pui Wong",
-      "team": "dolphins",
-      "steps": 406100
+      "name": "Michelle Weir",
+      "team": "owls",
+      "steps": 345300
     },
     {
       "name": "Dee Symons",
       "team": "owls",
-      "steps": 401295
+      "steps": 334600
     }
   ],
   "events": [
