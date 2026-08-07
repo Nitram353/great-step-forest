@@ -122,6 +122,10 @@ function renderMap(teams) {
       .bindTooltip(`${wp[0]} · ${fmt(CUM[i])} km`, { direction: "top" });
   });
 
+  // Teams that have completed the route all get clamped to the final waypoint,
+  // so fan their markers out sideways (in pixels) to keep every finisher visible
+  const finished = teams.filter((t) => t.km >= ROUTE_TOTAL_KM);
+
   // Each team: progress line + marker (draw leaders last so they sit on top)
   [...teams].reverse().forEach((t) => {
     const progress = [];
@@ -131,17 +135,20 @@ function renderMap(teams) {
 
     L.polyline(progress, { color: t.color, weight: 4.5, opacity: 0.85 }).addTo(map);
 
+    const fi = finished.indexOf(t);
+    const shiftPx = fi === -1 ? 0 : Math.round((fi - (finished.length - 1) / 2) * 44);
+
     const icon = L.divIcon({
       className: "",
       html: `<div class="leaflet-team-marker" style="background:${t.color}">${t.emoji}</div>`,
       iconSize: [34, 34],
-      iconAnchor: [17, 30],
+      iconAnchor: [17 - shiftPx, 30],
     });
 
     L.marker([tip.lat, tip.lng], { icon, zIndexOffset: Math.round(t.km) })
       .addTo(map)
       .bindPopup(
-        `<strong>${esc(t.name)}</strong><br>${fmt(t.steps)} steps · ${fmt(t.km)} km from London`
+        `<strong>${esc(t.name)}</strong><br>${fmt(t.steps)} steps · ${fmt(t.km)} km from London${fi !== -1 ? "<br>🏁 Route complete!" : ""}`
       );
   });
 
