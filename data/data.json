@@ -11,7 +11,7 @@
     "distanceMultiplier": 4.5,
     "signupPledge": "£10",
     "justGivingUrl": "https://www.justgiving.com/page/vadym-kapliuk-1?utm_medium=FR&utm_source=CL",
-    "totalWalkers": 127,
+    "totalWalkers": 128,
     "showTopSteppers": true,
     "announcement": "Check out the weekly updates on the step challenge here and see where each squad has travelled to!",
     "stepUpAppUrl": "https://thestepupapp.com/"
@@ -46,7 +46,7 @@
       "name": "The Dolphins",
       "color": "#2d53ed",
       "emoji": "🐬",
-      "members": 32,
+      "members": 33,
       "joinUrl": "https://join.thestepupapp.com/Wfj4g4"
     }
   ],
